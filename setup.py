@@ -2,12 +2,12 @@ from pathlib import Path
 
 from setuptools import find_packages, setup
 
-version = Path("./labeler_client/version").read_text().strip()
+version = Path("./meganno_client/version").read_text().strip()
 package = {
-    "name": "labeler_client",
+    "name": "meganno_client",
     "version": version,
     "description": "Megagon Client-side Python Programmatic Library",
-    "url": "https://github.com/rit-git/labeler-client",
+    "url": "https://github.com/megagonlabs/meganno-client",
     "author": "Megagon Labs",
     "author_email": "",
     "license": "unlicense",
@@ -24,10 +24,10 @@ package = {
         "traitlets==5.9.0",
         "pydash==7.0.6",
         "tabulate==0.9.0",
-        "jaro-winkler==2.0.3"
+        "jaro-winkler==2.0.3",
     ],
     "extras_require": {
-        "ui": ["labeler-ui @ git+https://github.com/rit-git/labeler-ui.git@llm-v1"]
+        "ui": ["meganno-ui @ git+https://github.com/megagonlabs/meganno-ui.git@v1.5.6"]
     },
     "include_package_data": True,
     "zip_safe": False,

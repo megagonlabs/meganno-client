@@ -1,12 +1,12 @@
 import json
 import os
 
-from labeler_client.constants import VALID_PROVIDERS
-from labeler_client.helpers import get_request, post_request
-from labeler_client.llm_jobs import OpenAIJob
-from labeler_client.prompt import PromptTemplate
-from labeler_client.service import Service
-from labeler_client.subset import Subset
+from meganno_client.constants import VALID_PROVIDERS
+from meganno_client.helpers import get_request, post_request
+from meganno_client.llm_jobs import OpenAIJob
+from meganno_client.prompt import PromptTemplate
+from meganno_client.service import Service
+from meganno_client.subset import Subset
 
 
 class Controller:
@@ -414,16 +414,19 @@ class Controller:
             if "annotation_uuid" in r:
                 annotation_uuid_list.append(r["annotation_uuid"])
             elif "error" in r:
-                print(f"Invalid response for uuid {r['uuid']}: {r['error']}; annotation not persisted")
+                print(
+                    f"Invalid response for uuid {r['uuid']}: {r['error']}; annotation not persisted"
+                )
             else:
                 raise Exception("Invalid responses; annotations not persisted")
-        
+
         # set job
         if len(annotation_uuid_list) > 0:
-            ret = self.persist_job(agent_uuid, job_uuid, label_name, annotation_uuid_list)
+            ret = self.persist_job(
+                agent_uuid, job_uuid, label_name, annotation_uuid_list
+            )
             print("\n", ret)
             return job_uuid
         else:
             print("No valid responses; annotations not persisted")
             return None
-        

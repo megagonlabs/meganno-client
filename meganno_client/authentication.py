@@ -11,8 +11,8 @@ import requests
 import websockets
 from websockets import exceptions as ws_exceptions
 
-from labeler_client.constants import DNS_NAME
-from labeler_client.helpers import get_request, post_request
+from meganno_client.constants import DNS_NAME
+from meganno_client.helpers import get_request, post_request
 
 
 class Authentication:

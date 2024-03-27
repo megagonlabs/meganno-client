@@ -1,6 +1,6 @@
 import pydash
 
-from labeler_client.helpers import get_request
+from meganno_client.helpers import get_request
 
 
 class Statistic:

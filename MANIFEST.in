@@ -1,2 +1,2 @@
-include labeler_client/version
-recursive-include labeler_client/web/auth/out *
+include meganno_client/version
+recursive-include meganno_client/web/auth/out *

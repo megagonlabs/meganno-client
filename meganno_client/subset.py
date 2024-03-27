@@ -1,10 +1,9 @@
 import json
 import time
-from re import S
 
 import pydash
 
-from labeler_client.helpers import get_request, post_request
+from meganno_client.helpers import get_request, post_request
 
 
 class Subset:
@@ -276,7 +275,7 @@ class Subset:
                 - title: default "Annotation"
                 - height: default 300 (pixels)
         """
-        from labeler_ui import Annotation
+        from meganno_ui import Annotation
 
         current_time = int(time.time())
         # Create a Subset class-level reference to the subset and service object

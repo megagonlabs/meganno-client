@@ -1,43 +1,26 @@
-# **labeler-client**
-Client side programmatic python library for Labeler service with an inclusion of LLMs as annotators
+# **meganno-client**
+Client side programmatic python library for Meganno service with an inclusion of LLMs as annotators
 
-![version](https://img.shields.io/badge/labeler--client%20latest-v1.5.2-blue)
+![version](https://img.shields.io/badge/meganno--client%20latest-v1.5.2-blue)
 ## **Prerequisite Knowledge**
 Documentation for [Labeler concepts](http://labeler.megagon.info/1.x/) 
-
-<!-- ## Demos
-Example notebooks are under [/Examples](https://github.com/rit-git/labeler-client/tree/main/Examples)
-## To use in Python Notebook
-![version](https://img.shields.io/badge/labeler--client%20latest-v1.4.0-blue)
-
-You can use either `SSH` or `HTTPS` to install this python package
-- Run `pip install git+ssh://git@github.com/rit-git/labeler-client.git`
-- Run `pip install git+https://github.com/rit-git/labeler-client.git`
-  - You may need to use [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) instead of password
-- To update the package: add `--upgrade` flag *(labeler widget `labeler-ui` is included in the installation)*.
-- To install a specific version: add `@vx.x.x` tag after the github URL
-
-```python
-# To use library modules
-from labeler_client import ...
-``` -->
 
 ## **Installation**
 1. Download [conda](https://conda.io/projects/conda/en/stable/user-guide/install/download.html)
 2. Create a conda environment
    - Run `conda create -n <env_name> python=3.9`
    - Run `conda activate <env_name>`
-3. Install **labeler-client** with **labeler-ui** (recommended for notebook users)
+3. Install **meganno-client** with **meganno-ui** (recommended for notebook users)
     > You can use either `SSH` or `HTTPS` to install this python package.
     
     > Add @vx.x.x tag after the github URL
-    - Run `pip install "labeler_client[ui] @ git+ssh://git@github.com/rit-git/labeler-client.git"`
-    - Run `pip install "labeler_client[ui] @ git+https://github.com/rit-git/labeler-client.git"`
+    - Run `pip install "meganno_client[ui] @ git+ssh://git@github.com/megagonlabs/meganno-client.git"`
+    - Run `pip install "meganno_client[ui] @ git+https://github.com/megagonlabs/meganno-client.git"`
       - You may need to use [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) instead of password<br/>
     ---
-    To install without **labeler-ui**
-      - Run `pip install git+ssh://git@github.com/rit-git/labeler-client.git`
-      - Run `pip install git+https://github.com/rit-git/labeler-client.git`
+    To install without **meganno-ui**
+      - Run `pip install git+ssh://git@github.com/megagonlabs/meganno-client.git`
+      - Run `pip install git+https://github.com/megagonlabs/meganno-client.git`
         - You may need to use [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) instead of password<br/>
 4. Set up OpenAI API Keys [using environment variables in place of your API key
 ](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2)
@@ -56,7 +39,7 @@ Configure your browser to allow pop-ups; we recommend using Google Chrome.
   - Run `pip install -e .`
 - [Submit pull-request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to `stage` or appropriate development branch
 ## For documentation development
-labeler-client documentation is hosted [here](http://labeler.megagon.info/) (we use [`Mike`](https://github.com/jimporter/mike) with [`MkDocs`](https://github.com/mkdocs/mkdocs))
+meganno-client documentation is hosted [here](http://labeler.megagon.info/) (we use [`Mike`](https://github.com/jimporter/mike) with [`MkDocs`](https://github.com/mkdocs/mkdocs))
 - **DO NOT** try to manually modify `gh-pages` branch unless you know what you are doing
 - Run `mike list` to list all existing docs
 - To deploy a specific version of docs, run `mike deploy [version]`

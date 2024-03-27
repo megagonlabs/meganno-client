@@ -9,19 +9,14 @@ import pandas as pd
 import pydash
 from tqdm import tqdm
 
-from labeler_client.authentication import Authentication
-from labeler_client.constants import (
-    BATCH_SIZE,
-    DEFAULT_LIST_LIMIT,
-    DNS_NAME,
-    HTTPX_LIMITS,
-    REQUEST_TIMEOUT_SECONDS,
-    SERVICE_ENDPOINTS,
-)
-from labeler_client.helpers import get_request, post_request
-from labeler_client.schema import Schema
-from labeler_client.statistic import Statistic
-from labeler_client.subset import Subset
+from meganno_client.authentication import Authentication
+from meganno_client.constants import (BATCH_SIZE, DEFAULT_LIST_LIMIT, DNS_NAME,
+                                      HTTPX_LIMITS, REQUEST_TIMEOUT_SECONDS,
+                                      SERVICE_ENDPOINTS)
+from meganno_client.helpers import get_request, post_request
+from meganno_client.schema import Schema
+from meganno_client.statistic import Statistic
+from meganno_client.subset import Subset
 
 
 class Service:
@@ -76,7 +71,7 @@ class Service:
         """
         Show project management dashboard in a floating dashboard.
         """
-        from labeler_ui.widgets.Dashboard import Dashboard
+        from meganno_ui.widgets.Dashboard import Dashboard
 
         current_time = int(time.time())
         service_ref = f"service_ref_{current_time}"

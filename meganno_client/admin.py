@@ -1,8 +1,8 @@
 import pydash
 
-from labeler_client.authentication import Authentication
-from labeler_client.constants import DNS_NAME
-from labeler_client.helpers import (
+from meganno_client.authentication import Authentication
+from meganno_client.constants import DNS_NAME
+from meganno_client.helpers import (
     delete_request,
     get_request,
     post_request,

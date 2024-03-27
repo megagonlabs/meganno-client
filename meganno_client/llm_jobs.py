@@ -1,23 +1,18 @@
 import json
 import queue
-import random
 import re
 import time
 from collections import Counter
-from curses.ascii import isdigit
-from string import Template
 
 import jaro
 import jsonschema
 import numpy as np
 import openai
 from tabulate import tabulate
-from tqdm import tqdm
 from tqdm.notebook import tqdm_notebook
 
-from labeler_client.constants import FUZZY_THRESHOLD
-from labeler_client.prompt import PromptTemplate
-from labeler_client.valid_formats import model_config_options
+from meganno_client.constants import FUZZY_THRESHOLD
+from meganno_client.valid_formats import model_config_options
 
 MAX_TOKEN_LIMIT = 2044
 
@@ -601,7 +596,7 @@ class OpenAIJob:
                     if label_name not in self.label_dic:
                         self.semantic_errors.append((uuid, response))
                         continue
-                    
+
                     if fuzzy_extraction == False:
                         if label_response not in self.label_dic[label_name]["options"]:
                             self.semantic_errors.append((uuid, response))
@@ -721,7 +716,7 @@ class OpenAIJob:
             if len(label_responses) == 0:
                 continue
             self.uuids_with_valid_annotations.append(uuid)
-            
+
             if label_level == "record":
                 label = {"labels_record": []}
                 for label_name, response in label_responses.items():
