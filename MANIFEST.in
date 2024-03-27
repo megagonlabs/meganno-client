@@ -1,0 +1,2 @@
+include labeler_client/version
+recursive-include labeler_client/web/auth/out *

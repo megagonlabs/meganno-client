@@ -1,0 +1,87 @@
+site_name: labeler-client Doc
+theme:
+    logo: assets/logo.png
+    favicon: assets/images/favicon.ico
+    name: material
+    palette:
+        # Palette toggle for light mode
+        - scheme: default
+          primary: green
+          accent: green
+          toggle:
+              icon: material/lightbulb
+              name: Switch to dark mode
+        # Palette toggle for dark mode
+        - scheme: slate
+          primary: green
+          accent: green
+          toggle:
+              icon: material/lightbulb-outline
+              name: Switch to light mode
+    icon:
+        repo: fontawesome/brands/github
+        edit: material/file-edit-outline
+    features:
+        - content.action.edit
+        - content.action.view
+        - navigation.footer
+        - content.code.annotate
+        - content.code.copy
+        - navigation.tracking
+        - navigation.top
+        - toc.integrate
+        - toc.follow
+
+nav:
+    - Overview: index.md
+    - Getting started: quickstart.md
+    - Advanced Features: advanced.md
+    - API docs:
+          - Schema: references/schema.md
+          - Service: references/service.md
+          - Statistic: references/statistic.md
+          - Subset: references/subset.md
+
+watch:
+    - ../labeler_client
+repo_url: https://github.com/rit-git/labeler-client
+repo_name: rit-git/labeler-client
+edit_uri: edit/main/mkdocs/docs/
+copyright: Copyright &copy; 2023 Megagon Labs
+plugins:
+    - search
+    - mike:
+          version_selector: true
+          css_dir: css
+          javascript_dir: js
+    - mkdocstrings:
+          handlers:
+              python:
+                  options:
+                      show_root_heading: true
+                      docstring_style: numpy
+                      members_order: source
+                      show_root_members_full_path: false
+                      show_signature_annotations: true
+                      show_source: false
+                      filters: ["!__", "__init__"] # exclude private functions
+extra:
+    version:
+        provider: mike
+    social:
+        - icon: fontawesome/brands/linkedin
+          link: https://www.linkedin.com/company/megagon-labs
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/MegagonLabs
+        - icon: fontawesome/brands/facebook
+          link: https://www.facebook.com/megagonlabs/
+extra_css:
+    - stylesheets/override.css
+markdown_extensions:
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
