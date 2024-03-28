@@ -3,7 +3,7 @@ Client side programmatic python library for Meganno service with an inclusion of
 
 ![version](https://img.shields.io/badge/meganno--client%20latest-v1.5.3-blue)
 ## **Prerequisite Knowledge**
-Documentation for [Labeler concepts](http://meganno.megagon.info/1.x/) 
+Documentation for [MEGAnno concepts](http://meganno.megagon.info/1.x/) 
 
 ## **Installation**
 1. Download [conda](https://conda.io/projects/conda/en/stable/user-guide/install/download.html)
@@ -26,7 +26,7 @@ Documentation for [Labeler concepts](http://meganno.megagon.info/1.x/)
 ](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2)
 ## **Self-hosted service (optional)**
 - Download [docker-compose.yml](https://gist.github.com/rafaellichen/062cb800e11ef113ad7e23be45527555)
-- Follow [setup instructions](https://github.com/rit-git/labeler-service#labeler-service)
+- Follow [setup instructions](https://github.com/megagonlabs/meganno-service)
 ## **Run Jupyter Notebook**
 Configure your browser to allow pop-ups; we recommend using Google Chrome. 
 - Install jupyter server `pip install jupyter`
@@ -39,7 +39,7 @@ Configure your browser to allow pop-ups; we recommend using Google Chrome.
   - Run `pip install -e .`
 - [Submit pull-request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to `stage` or appropriate development branch
 ## For documentation development
-meganno-client documentation is hosted [here](http://labeler.megagon.info/) (we use [`Mike`](https://github.com/jimporter/mike) with [`MkDocs`](https://github.com/mkdocs/mkdocs))
+meganno-client documentation is hosted [here](http://meganno.megagon.info/) (we use [`Mike`](https://github.com/jimporter/mike) with [`MkDocs`](https://github.com/mkdocs/mkdocs))
 - **DO NOT** try to manually modify `gh-pages` branch unless you know what you are doing
 - Run `mike list` to list all existing docs
 - To deploy a specific version of docs, run `mike deploy [version]`
