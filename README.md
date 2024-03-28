@@ -3,7 +3,7 @@ Client side programmatic python library for Meganno service with an inclusion of
 
 ![version](https://img.shields.io/badge/meganno--client%20latest-v1.5.3-blue)
 ## **Prerequisite Knowledge**
-Documentation for [Labeler concepts](http://labeler.megagon.info/1.x/) 
+Documentation for [Labeler concepts](http://meganno.megagon.info/1.x/) 
 
 ## **Installation**
 1. Download [conda](https://conda.io/projects/conda/en/stable/user-guide/install/download.html)
