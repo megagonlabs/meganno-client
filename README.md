@@ -1,7 +1,7 @@
 # **meganno-client**
 Client side programmatic python library for Meganno service with an inclusion of LLMs as annotators
 
-![version](https://img.shields.io/badge/meganno--client%20latest-v1.5.2-blue)
+![version](https://img.shields.io/badge/meganno--client%20latest-v1.5.3-blue)
 ## **Prerequisite Knowledge**
 Documentation for [Labeler concepts](http://labeler.megagon.info/1.x/) 
 
