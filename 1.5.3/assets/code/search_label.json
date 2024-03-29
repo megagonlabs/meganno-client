@@ -1,0 +1,4 @@
+{
+    "label_name": "sentiment",
+    "label_value": ["pos", "neg"]
+}

@@ -1,0 +1,4 @@
+.md-search-result__more > summary {
+    top: -1px;
+    padding-top: 1px;
+}
