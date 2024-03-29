@@ -1,4 +1,4 @@
-site_name: labeler-client Doc
+site_name: meganno-client Doc
 theme:
     logo: assets/logo.png
     favicon: assets/images/favicon.ico
@@ -43,9 +43,9 @@ nav:
           - Subset: references/subset.md
 
 watch:
-    - ../labeler_client
-repo_url: https://github.com/rit-git/labeler-client
-repo_name: rit-git/labeler-client
+    - ../meganno_client
+repo_url: https://github.com/megagonlabs/meganno-client
+repo_name: megagonlabs/meganno-client
 edit_uri: edit/main/mkdocs/docs/
 copyright: Copyright &copy; 2023 Megagon Labs
 plugins:

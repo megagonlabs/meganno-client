@@ -39,7 +39,8 @@ Configure your browser to allow pop-ups; we recommend using Google Chrome.
   - Run `pip install -e .`
 - [Submit pull-request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to `stage` or appropriate development branch
 ## For documentation development
-meganno-client documentation is hosted [here](http://meganno.megagon.info/) (we use [`Mike`](https://github.com/jimporter/mike) with [`MkDocs`](https://github.com/mkdocs/mkdocs))
+meganno-client documentation is hosted [here](https://meganno.megagon.info/) (we use [`Mike`](https://github.com/jimporter/mike) with [`MkDocs`](https://github.com/mkdocs/mkdocs))
+- Install Mike, theme and plugins
 - **DO NOT** try to manually modify `gh-pages` branch unless you know what you are doing
 - Run `mike list` to list all existing docs
 - To deploy a specific version of docs, run `mike deploy [version]`
