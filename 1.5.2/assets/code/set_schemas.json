@@ -1,0 +1,19 @@
+{
+    "label_schema": [
+        {
+            "name": "sentiment",
+            "level": "record",
+            "options": [
+                {
+                    "value": "pos",
+                    "text": "positive"
+                },
+                {
+                    "value": "neg",
+                    "text": "negative"
+                }
+            ]
+        },
+        
+    ]
+}
