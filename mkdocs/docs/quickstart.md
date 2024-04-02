@@ -119,7 +119,7 @@ Not all data points are equally important for downstream models and applications
 The script below shows an example of searching for data records with keyword "delay" and bringing up a widget for annotation in the next cell. More examples [here](advanced.md#subset-suggestion).
 ```python
 # search results => subset s1
-s1 = demo.search(keyword='delay', limit=10, start=0)
+s1 = demo.search(keyword='delay', limit=10, skip=0)
 # bring up a widget 
 s1.show()
 ```

@@ -70,7 +70,7 @@ With `hashtag` metadata, Labeler widget can show it as context at annotation tim
 ```python
 s1= demo.search(keyword='',
               limit=50,
-              start=0,
+              skip=0,
               meta_names=['hashtag'])
 s1.show()
 ```
@@ -83,7 +83,7 @@ Labeler supports searches based on regular expressions:
 ```python
 s2_reg= demo.search(regex='*#delay*',
                   limit=50,
-                  start=0)
+                  skip=0)
 s2_reg.show({'view':'table'})
 ```
 
@@ -93,7 +93,7 @@ Searches initiated by users can help them explore the dataset in a controlled wa
 For example, suggest_similar suggests neighbors (based on distance in the embedding space) of data in the querying subset:
 
 ```python
-s3 = demo.search(keyword='delay', limit=3, start=0) # source subset
+s3 = demo.search(keyword='delay', limit=3, skip=0) # source subset
 s4 = s3.suggest_similar('bert-embedding', limit=4) # needs to provide a valid meta_name
 s4.show()
 ```
