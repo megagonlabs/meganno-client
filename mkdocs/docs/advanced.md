@@ -74,7 +74,7 @@ s1= demo.search(keyword='',
               meta_names=['hashtag'])
 s1.show()
 ```
-![hashtag as context](assets/images/meta_hashtag.png)
+![hashtag as context](assets/images/table.png)
 
 ## Advanced Subset Generation
 In addition to exact keyword matches, Labeler also provides more advanced approaches of generating subsets.
