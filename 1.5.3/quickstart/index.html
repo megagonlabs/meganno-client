@@ -661,14 +661,16 @@
 <li>Run <code>conda create -n &lt;env_name&gt; python=3.9</code></li>
 <li>Run <code>conda activate &lt;env_name&gt;</code></li>
 <li>
-<p>Install <strong>meganno-client</strong> with <strong>meganno-ui</strong> (recommended for notebook users)
-    &gt; You can use either <code>SSH</code> or <code>HTTPS</code> to install this python package.</p>
+<p>Install <strong>meganno-client</strong> with <strong>meganno-ui</strong> (recommended for notebook users)</p>
 <blockquote>
-<p>Add @vx.x.x tag after the github URL
-- Run <code>pip install "meganno_client[ui] @ git+ssh://git@github.com/megagonlabs/meganno-client.git"</code>
-- Run <code>pip install "meganno_client[ui] @ git+https://github.com/megagonlabs/meganno-client.git"</code>
-  - You may need to use <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">personal access token</a> instead of password<br/></p>
+<p>You can use either <code>SSH</code> or <code>HTTPS</code> to install this python package.
+Add @vx.x.x tag after the github URL</p>
 </blockquote>
+<ul>
+<li>Run <code>pip install "meganno_client[ui] @ git+ssh://git@github.com/megagonlabs/meganno-client.git"</code></li>
+<li>Run <code>pip install "meganno_client[ui] @ git+https://github.com/megagonlabs/meganno-client.git"</code></li>
+<li>You may need to use <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">personal access token</a> instead of password<br/></li>
+</ul>
 <hr />
 <p>To install without <strong>meganno-ui</strong>
   - Run <code>pip install git+ssh://git@github.com/megagonlabs/meganno-client.git</code>
