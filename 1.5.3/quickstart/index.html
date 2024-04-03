@@ -334,9 +334,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication-public" class="md-nav__link">
+  <a href="#self-hosted-service" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication [public]
+      Self-hosted service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
     </span>
   </a>
   
@@ -657,8 +666,16 @@
 </a></p>
 </li>
 </ol>
-<h2 id="authentication-public">Authentication [public]</h2>
-<p>Only token access is available for the public now. Please reach out to the admin to get a valid token.</p>
+<h2 id="self-hosted-service"><strong>Self-hosted service</strong></h2>
+<ul>
+<li>Download docker compose files at <a href="https://github.com/megagonlabs/meganno-service">meganno-service</a></li>
+<li>Follow <a href="https://github.com/megagonlabs/meganno-service?tab=readme-ov-file#set-up-services">setup instructions</a></li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>We have 2 ways to authenticate with the service:
+1. Short-term 1 hour access with username and password sign in.
+    - require re-authentication every hour.
+2. Long-term access with access token without signing in every time.</p>
 <h2 id="basic-usages">Basic Usages</h2>
 <p>Please also refer to this <a href="https://github.com/rit-git/labeler-client/blob/main/Examples/Example%201%20-%20Basic%20pipeline.ipynb">notebook</a> for a running example of the basic pipeline of using labeler in a notebook.</p>
 <h3 id="setting-schema">Setting Schema</h3>
