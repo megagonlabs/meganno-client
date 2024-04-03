@@ -691,7 +691,8 @@
 <li>
 <p>After signing in, you will be able to generate a long-term personal access token by running <code>auth.create_access_token(expiration_duration=7, note="testing")</code></p>
 <ul>
-<li><code>expiration_duration</code> is in days</li>
+<li><code>expiration_duration</code> is in days.</li>
+<li>To have non-expiring token, set <code>expiration_duration</code> to 0 (in the background, it expires after 100 years).</li>
 </ul>
 </li>
 </ul>
