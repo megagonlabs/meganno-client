@@ -1,6 +1,6 @@
 # Advanced features
 
-This [notebook](https://github.com/rit-git/labeler-client/blob/main/Examples/Example%202%20-%20Advanced%20features.ipynb) provides examples of some of the advanced features.
+This [notebook](https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%202%20-%20Advanced%20features%20(admin-only).ipynb) provides examples of some of the advanced features.
 
 
 ## Updating Schema
