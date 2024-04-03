@@ -679,13 +679,17 @@
 <ul>
 <li>Require re-authentication every hour.</li>
 <li>
-<p>After executing <code>auth = Authentication(project="eacl_demo")</code> (this only works for notebook and terminal running on local computer), you will be provided with a sign in interface via a new browser tab.</p>
+<p>After executing <code>auth = Authentication(project="&lt;project_name&gt;")</code> (this only works for notebook and terminal running on local computer), you will be provided with a sign in interface via a new browser tab.</p>
 <p><img alt="Sign-in" src="../assets/images/signin.png" style="width:300px" /></p>
 </li>
 </ul>
 </li>
 <li>
 <p>Long-term access with access token without signing in every time.</p>
+<ul>
+<li>If the notebook or terminal is running on the cloud, you need to use this method to authenticate with the service.</li>
+<li>With the save token, you can initialize the authentication class object by executing <code>auth = Authentication(project="&lt;project_name&gt;", token="&lt;your_token&gt;")</code></li>
+</ul>
 </li>
 </ol>
 <h2 id="basic-usages">Basic Usages</h2>
