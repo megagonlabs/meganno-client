@@ -714,20 +714,32 @@
 <li>Initialize Admin class object:
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">labeler_client</span> <span class="kn">import</span> <span class="n">Admin</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;...&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span> <span class="o">=</span> <span class="n">Authentication</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;&lt;project_name&gt;&quot;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">auth</span> <span class="o">=</span> <span class="n">Authentication</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;&lt;project_name&gt;&quot;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">admin</span> <span class="o">=</span> <span class="n">Admin</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;eacl_demo&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># OR</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">admin</span> <span class="o">=</span> <span class="n">Admin</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;eacl_demo&quot;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
 </span></code></pre></div></li>
-<li>Genereate invitation code
+<li>Genereate invitation code<ul>
+<li>invitation code has 7-day expiration duration
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">admin</span><span class="o">.</span><span class="n">create_invitation</span><span class="p">(</span><span class="n">single_use</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="s2">&quot;&lt;invitation_code&gt;&quot;</span><span class="p">,</span> <span class="n">role_code</span><span class="o">=</span><span class="s2">&quot;contributor&quot;</span><span class="p">)</span>
 </span></code></pre></div></li>
-<li>To renew or revoke an existing invitation code:
+</ul>
+</li>
+<li>To renew or revoke an existing invitation code:<ul>
+<li>after renewing, the expiration date is extended by another 7 days.
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">admin</span><span class="o">.</span><span class="n">get_invitations</span><span class="p">()</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">admin</span><span class="o">.</span><span class="n">renew_invitation</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;&lt;invitation_code_id&gt;&quot;</span><span class="p">)</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">admin</span><span class="o">.</span><span class="n">revoke_invitation</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;&lt;invitation_code_id&gt;&quot;</span><span class="p">)</span>
 </span></code></pre></div></li>
+</ul>
+</li>
+<li>New users with valid invitation code can sign up by installing the client library and follow the instructions below:<ul>
+<li>After executing <code>auth = Authentication(project="&lt;project_name&gt;")</code>, a new browser tab will present itself.</li>
+<li>Clicking on "Sign up" at the bottom of the dialog, and you will be taken to the sign up page.
+<img alt="Sign-up" src="../assets/images/signup.png" style="width:300px" /></li>
+</ul>
+</li>
 </ol>
 <h2 id="basic-usages">Basic Usages</h2>
 <p>Please also refer to this <a href="https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%201%20-%20Basic%20pipeline.ipynb">notebook</a> for a running example of the basic pipeline of using labeler in a notebook.</p>
