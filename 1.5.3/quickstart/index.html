@@ -334,6 +334,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentication-and-project-management-megagon-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Project Management [Megagon-only]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and Project Management [Megagon-only]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Projects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#authentication-public" class="md-nav__link">
     <span class="md-ellipsis">
       Authentication [public]
@@ -645,25 +678,58 @@
 <p><code>import labeler_client</code></p>
 </li>
 </ol>
+<h2 id="authentication-and-project-management-megagon-only">Authentication and Project Management [Megagon-only]</h2>
+<h3 id="authentication">Authentication</h3>
+<p>Megagon users can choose between two authentication methods to identify themselves and connect to a Megagon-hosted labeler service: <code>Google Auth</code> or <code>Tokens</code>.</p>
+<ul>
+<li>
+<p>Option 1: Authenticate through Megagon email account. Note that sessions expire after 1 hour.
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># To get your identifier for the labeler-service, run the following command to show the login UI.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">labeler_ui</span> <span class="kn">import</span> <span class="n">Authentication</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">authentication</span> <span class="o">=</span> <span class="n">Authentication</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">authentication</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+    <img alt="Google Auth" src="../assets/images/auth.png" /></p>
+<p>After a successful login, the <code>authentication</code> object can be used to connect to the back-end service:
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">labeler_client</span> <span class="kn">import</span> <span class="n">Service</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">demo</span> <span class="o">=</span> <span class="n">Service</span><span class="p">(</span><span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;demo&#39;</span><span class="p">,</span> <span class="n">auth</span> <span class="o">=</span> <span class="n">authentication</span><span class="p">)</span>
+</span></code></pre></div>
+* Option 2: After the initial authentication, you can generate a long-term token in the "token" tab of the authentication widget.</p>
+<p><img alt="token" src="../assets/images/token.png" />
+Similarly, connect using tokens:</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">labeler_client</span> <span class="kn">import</span> <span class="n">Service</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">demo</span> <span class="o">=</span> <span class="n">Service</span><span class="p">(</span><span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;demo&#39;</span><span class="p">,</span> <span class="n">token</span> <span class="o">=</span> <span class="n">xxx</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+</ul>
+<h3 id="managing-projects">Managing Projects</h3>
+<p><img alt="Project Management" src="../assets/images/project_management.png" />
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># To bring up the project panel, run the following command to show the interface.</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">labeler_client</span> <span class="kn">import</span> <span class="n">Project</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">Project</span><span class="p">(</span><span class="n">auth</span> <span class="o">=</span> <span class="n">authentication</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># similarly, use token:</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">Project</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="n">xxx</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div></p>
 <h2 id="authentication-public">Authentication [public]</h2>
 <p>Only token access is available for the public now. Please reach out to the admin to get a valid token.</p>
 <h2 id="basic-usages">Basic Usages</h2>
 <p>Please also refer to this <a href="https://github.com/rit-git/labeler-client/blob/main/Examples/Example%201%20-%20Basic%20pipeline.ipynb">notebook</a> for a running example of the basic pipeline of using labeler in a notebook.</p>
 <h3 id="setting-schema">Setting Schema</h3>
 <p><em>Schema</em> defines the annotation task. Example of setting schema for a sentiment analysis task with positive and negative options. 
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">set_schemas</span><span class="p">({</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s1">&#39;label_schema&#39;</span><span class="p">:</span> <span class="p">[</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sentiment&quot;</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> 
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">[</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                <span class="p">{</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span> <span class="p">},</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                <span class="p">{</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;neg&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span> <span class="p">},</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            <span class="p">]</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="p">]</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">})</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>       
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">set_schemas</span><span class="p">({</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="s1">&#39;label_schema&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sentiment&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> 
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                <span class="p">{</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span> <span class="p">},</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                <span class="p">{</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;neg&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span> <span class="p">},</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            <span class="p">]</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="p">}</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="p">]</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">})</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>       
 </span></code></pre></div>
 A label can be defined to have level <code>record</code> or <code>span</code>. Record-level labels correspond to the entire data record, while span-level labels are associated with a text span in the record. See <a href="../advanced/#updating-schema">Updating Schema</a> for an example of a more complex schema.</p>
 <h3 id="importing-data">Importing Data</h3>
@@ -691,18 +757,18 @@ A label can be defined to have level <code>record</code> or <code>span</code>. R
 </tbody>
 </table>
 <p>Importing data is easy by providing column names for <code>id</code> which is a unique importing identifier for data records, and <code>content</code> which is the raw text field.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">import_data_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column_mapping</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="s1">&#39;tweet&#39;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">})</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">import_data_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column_mapping</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="s1">&#39;tweet&#39;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">})</span>
 </span></code></pre></div>
 <h3 id="exploratory-labeling">Exploratory Labeling</h3>
 <p>Not all data points are equally important for downstream models and applications. There are often cases where users might want to prioritize a particular batch (e.g., to achieve better class or domain coverage or focus on the data points that the downstream model cannot predict well). Labeler provides a flexible and controllable way of organizing annotation projects through the exploratory labeling. This annotation process is done by first identifying an interesting subset and assigning labels to data in the subset. We provide a set of “power tools” to help identify valuable subsets.</p>
 <p>The script below shows an example of searching for data records with keyword "delay" and bringing up a widget for annotation in the next cell. More examples <a href="../advanced/#subset-suggestion">here</a>.
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># search results =&gt; subset s1</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s1</span> <span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># bring up a widget </span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">s1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># search results =&gt; subset s1</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">s1</span> <span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># bring up a widget </span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">s1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div></p>
 <h4 id="column-filters">Column Filters</h4>
 <p><img src="../assets/images/column_filter_reset.png" alt="Column Filters" width="800">
@@ -724,8 +790,8 @@ A label can be defined to have level <code>record</code> or <code>span</code>. R
 <br/><span style="color: gray;"><em>To focus on a single metadata value, click on "Settings" button, then choose a metadata name from the list.</em></span></p>
 <h3 id="exporting">Exporting</h3>
 <p>Although iterations can happen within a single notebook, it's easy to export the data, and annotations collected:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># collecting the annotation generated by all annotators</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">demo</span><span class="o">.</span><span class="n">export</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># collecting the annotation generated by all annotators</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">demo</span><span class="o">.</span><span class="n">export</span><span class="p">()</span>
 </span></code></pre></div>
 
 

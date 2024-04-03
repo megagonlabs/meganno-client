@@ -329,15 +329,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#interactive-jupyter-widgets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interactive Jupyter Widgets
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -545,7 +536,8 @@
 
 <h1 id="welcome-to-meganno-documentation">Welcome to MEGAnno documentation</h1>
 <h2 id="what-is-meganno">What is MEGAnno?</h2>
-<p>MEGAnno is a human-LLM collaborative annotation framework. For cost-efficient and high-quality annotation, we adopt the LLM annotation <strong>--&gt;</strong> Human verification workflow where LLM agents label data first and then humans verify a subset of potentially problematic LLM labels.</p>
+<p>MEGAnno is a human-LLM collaborative annotation framework. For cost-efficient and high-quality annotation, we adopt the LLM annotation <strong>--&gt;</strong> Human verification workflow where LLM agents label data first and then humans verify a subset of potentially problematic LLM labels.
+<img alt="Figure 1. Our human-LLM collaborative workflow." src="assets/images/meganno_site_fig1.png" /></p>
 <p>Our features include:</p>
 <ul>
 <li>Effective LLM agent and annotation management</li>
@@ -555,16 +547,8 @@
 </ul>
 <h2 id="system-overview">System Overview</h2>
 <p>MEGAnno provides two key components: (1) a Python client library featuring interactive widgets and (2) a back-end service consisting of web API and database servers. To use our system, a user can interact with a Jupyter Notebook that has the MEGAnno client installed. Through programmatic interfaces and UI widgets, the client communicates with the service.</p>
-<ul>
-<li>Labeler is a framework consisting of customizable UI and programmatic interfaces, plus backend storage and management for your data, annotations, and auxiliary information.</li>
-<li>Labeler is with you throughout the entire life cycle of your annotation project, from early-stage exploration to analysis, project evolution, and large-scale deployment, meeting you where your everyday data science work takes place.</li>
-<li>Labeler provides a useful set of out-of-the-box “power tools” which give you extra leverage and reach. The tools could be easily extended to fit the special needs of projects.</li>
-</ul>
-<p>Labeler provides 1) a client library with both interactive in-notebook UI widgets and Python programmatic interfaces, and 2) a back-end service that stores and manages all needed information with language-agnostic REST APIs. This is the documentatin for the client library, for instructions of setting up a service, please refer to the <a href="https://github.com/rit-git/labeler-service">service documentations</a>.</p>
 <h2 id="demo">Demo</h2>
-<p>For Megagon hosted demo, please head to <a href="https://meganno.github.io/">https://meganno.github.io/</a></p>
-<h2 id="interactive-jupyter-widgets">Interactive Jupyter Widgets</h2>
-<p>Labeler’s annotation widget features 1) a table view to facilitate exploratory and batch labeling and 2) a more zoomed-in single view with more space for each data example, as in most existing labeling tools.</p>
+<p>For Megagon hosted demo, please head to <a href="https://meganno.github.io/">https://meganno.github.io/</a>.</p>
 <p><img alt="Labeler's table view" src="assets/images/table.gif" />
 <br/><span style="color: gray;"><em>Table view of the annotation widget. Data examples are organized in a table for better exploration and comparison. Users can also search over, sort or filter on data and annotations.</em></span></p>
 <p><img alt="Labeler's single view" src="assets/images/single.gif" />
