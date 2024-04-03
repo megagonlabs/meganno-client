@@ -655,27 +655,27 @@
 
 <h1 id="getting-started">Getting Started</h1>
 <h2 id="installation">Installation</h2>
-<p>It is highly recommended to use a <a href="https://docs.python.org/3/library/venv.html">virtual environment</a> or <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environment</a>. </p>
 <ol>
+<li>Download <a href="https://conda.io/projects/conda/en/stable/user-guide/install/download.html">conda</a></li>
+<li>Create a conda environment</li>
+<li>Run <code>conda create -n &lt;env_name&gt; python=3.9</code></li>
+<li>Run <code>conda activate &lt;env_name&gt;</code></li>
 <li>
-<p>To create a new environment:</p>
-<p><code>conda create -n labeler python=3.9</code></p>
-</li>
-<li>
-<p>To activate the environment:</p>
-<p><code>conda activate labeler</code></p>
-</li>
-<li>
-<p>To install the labeler-client lib (add <code>@vx.x.x</code> tag at the end of URL to specify the version):</p>
-<p><code>pip install git+https://github.com/rit-git/labeler-client.git</code></p>
-</li>
-<li>
-<p>To register the new environment as a Jupyter kernel.</p>
-<p><code>python -m ipykernel install --user --name=labeler</code></p>
-</li>
-<li>
-<p>To start using the client lib in a Jupyter notebook or Jupyter Lab page, in <code>Kernel</code> &gt; <code>Change Kernel</code>  select the new labeler environment. </p>
-<p><code>import labeler_client</code></p>
+<p>Install <strong>meganno-client</strong> with <strong>meganno-ui</strong> (recommended for notebook users)
+    &gt; You can use either <code>SSH</code> or <code>HTTPS</code> to install this python package.</p>
+<blockquote>
+<p>Add @vx.x.x tag after the github URL
+- Run <code>pip install "meganno_client[ui] @ git+ssh://git@github.com/megagonlabs/meganno-client.git"</code>
+- Run <code>pip install "meganno_client[ui] @ git+https://github.com/megagonlabs/meganno-client.git"</code>
+  - You may need to use <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">personal access token</a> instead of password<br/></p>
+</blockquote>
+<hr />
+<p>To install without <strong>meganno-ui</strong>
+  - Run <code>pip install git+ssh://git@github.com/megagonlabs/meganno-client.git</code>
+  - Run <code>pip install git+https://github.com/megagonlabs/meganno-client.git</code>
+    - You may need to use <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">personal access token</a> instead of password<br/>
+4. Set up OpenAI API Keys <a href="https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2">using environment variables in place of your API key
+</a></p>
 </li>
 </ol>
 <h2 id="authentication-and-project-management-megagon-only">Authentication and Project Management [Megagon-only]</h2>
