@@ -25,7 +25,7 @@ Documentation for [MEGAnno concepts](https://meganno.megagon.info)
 4. Set up OpenAI API Keys [using environment variables in place of your API key
 ](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2)
 ## **Self-hosted service (optional)**
-- Download [docker-compose.yml](https://gist.github.com/rafaellichen/062cb800e11ef113ad7e23be45527555)
+- Download docker compose files at [meganno-service](https://github.com/megagonlabs/meganno-service)
 - Follow [setup instructions](https://github.com/megagonlabs/meganno-service)
 ## **Run Jupyter Notebook**
 Configure your browser to allow pop-ups; we recommend using Google Chrome. 
