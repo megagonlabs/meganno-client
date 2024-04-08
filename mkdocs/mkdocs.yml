@@ -41,6 +41,8 @@ nav:
           - Service: references/service.md
           - Statistic: references/statistic.md
           - Subset: references/subset.md
+          - Controller: references/controller.md
+          - OpenAIJob: references/openai_job.md
 
 watch:
     - ../meganno_client
