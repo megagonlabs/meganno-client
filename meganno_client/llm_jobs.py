@@ -238,10 +238,16 @@ class OpenAIJob:
         return prompts
 
     def get_response_length(self):
+        """
+        Returns the length of the openai response
+        """
         content = self.openai_response.choices[0]["message"]["content"]
         return len(content)
 
     def get_openai_conf_score(self):
+        """
+        Returns confidence score of the label, calculated using average of logit scores
+        """
         logprobs = []
         logprobs_response = self.openai_response.choices[0]["logprobs"]["content"]
         for logprob in logprobs_response:

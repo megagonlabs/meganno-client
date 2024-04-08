@@ -11,7 +11,7 @@ from meganno_client.subset import Subset
 
 class Controller:
     """
-    The controller class manages agents and runs agent jobs.
+    The Controller class manages agents and runs agent jobs.
     """
 
     def __init__(self, service, auth):
@@ -21,9 +21,9 @@ class Controller:
         Parameters
         ----------
         service : Service
-            [Megagon-only] Labeler service object for the connected project.
+            Labeler service object for the connected project.
         auth : Authentication
-            [Megagon-only] Labeler authentication object.
+            Labeler authentication object.
         """
         self.__service = service
         self.__auth = auth
@@ -42,6 +42,12 @@ class Controller:
         ----------
         created_by_filter : list, optional
             List of user IDs to filter agents, by default None (if None, list all)
+        provider_filter: str
+            Returns agents with the specified provider eg. openai
+        api_filter: list(str)
+            Returns agents with the specified api eg. completion
+        show_job_list: bool
+            if True, also return the list uuids of jobs of the agent.
 
         Returns
         -------
@@ -359,7 +365,6 @@ class Controller:
         print("\nModel config: {}".format(model_config))
         print("\nPrompt template: ")
         print("\033[34m{}\x1b[0m".format(prompt_template.get_template()))
-        # print("─" * 70)
 
         # assumption: api key in env; model config is openai specific
         openai_api_key = os.environ["OPENAI_API_KEY"]
