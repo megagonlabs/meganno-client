@@ -36,6 +36,7 @@ nav:
     - Overview: index.md
     - Getting started: quickstart.md
     - Advanced Features: advanced.md
+    - LLM integration: llm_integration.md
     - API docs:
           - Schema: references/schema.md
           - Service: references/service.md

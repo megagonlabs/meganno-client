@@ -16,6 +16,22 @@ MEGAnno provides two key components: (1) a Python client library featuring inter
 ![Figure 2. Overview of MEGAnno+ system.](assets/images/meganno_site_fig2.png)
 <br/><span style="color: gray;">*Figure 2. Overview of MEGAnno+ system.*</span>
 
+**Subset**: refers to a slice of data created from user-defined searches. 
+
+**Record**: refers to an item within the data corpus. 
+
+**Agent**: an _Agent_ is defined by the configuration of the LLM (e.g., model’s name, version, and hyper-parameters) and a prompt template. 
+
+**Job**: when an _Agent_ is employed to annotate a selected data _Subset_, the execution is referred to as a Job.
+
+**Label**: stores the label assigned to a particular _Record_
+
+**Label_Metdata**: captures additional aspects of a label, such as LLM confidence score or length of label response, etc.
+
+**Verification**: captures annotations from human users that confirm or update LLM labels
+
+
+
 ## Demo
 For Megagon hosted demo, please head to [https://meganno.github.io/](https://meganno.github.io/).
 <video controls width='75%'>
