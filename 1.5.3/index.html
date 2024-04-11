@@ -403,6 +403,26 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="llm_integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LLM integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -411,10 +431,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -425,8 +445,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             API docs
           </label>
@@ -516,6 +536,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/openai_job/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenAIJob
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -570,6 +632,13 @@
 <p>MEGAnno provides two key components: (1) a Python client library featuring interactive widgets and (2) a back-end service consisting of web API and database servers. To use our system, a user can interact with a Jupyter Notebook that has the MEGAnno client installed. Through programmatic interfaces and UI widgets, the client communicates with the service.
 <img alt="Figure 2. Overview of MEGAnno+ system." src="assets/images/meganno_site_fig2.png" />
 <br/><span style="color: gray;"><em>Figure 2. Overview of MEGAnno+ system.</em></span></p>
+<p><strong>Subset</strong>: refers to a slice of data created from user-defined searches. </p>
+<p><strong>Record</strong>: refers to an item within the data corpus. </p>
+<p><strong>Agent</strong>: an <em>Agent</em> is defined by the configuration of the LLM (e.g., model’s name, version, and hyper-parameters) and a prompt template. </p>
+<p><strong>Job</strong>: when an <em>Agent</em> is employed to annotate a selected data <em>Subset</em>, the execution is referred to as a Job.</p>
+<p><strong>Label</strong>: stores the label assigned to a particular <em>Record</em></p>
+<p><strong>Label_Metdata</strong>: captures additional aspects of a label, such as LLM confidence score or length of label response, etc.</p>
+<p><strong>Verification</strong>: captures annotations from human users that confirm or update LLM labels</p>
 <h2 id="demo">Demo</h2>
 <p>For Megagon hosted demo, please head to <a href="https://meganno.github.io/">https://meganno.github.io/</a>.</p>
 <video controls width='75%'>
