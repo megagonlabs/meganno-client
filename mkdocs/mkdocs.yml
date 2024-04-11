@@ -35,6 +35,7 @@ theme:
 nav:
     - Overview: index.md
     - Getting started: quickstart.md
+    - Basic Usages: basic.md
     - Advanced Features: advanced.md
     - LLM integration: llm_integration.md
     - API docs:
