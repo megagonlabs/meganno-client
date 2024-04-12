@@ -81,7 +81,7 @@ In addition to exact keyword matches, Labeler also provides more advanced approa
 ### Regex-based searches
 Labeler supports searches based on regular expressions:
 ```python
-s2_reg= demo.search(regex='*#delay*',
+s2_reg= demo.search(regex='.* (delay) .*',
                   limit=50,
                   skip=0)
 s2_reg.show({'view':'table'})
