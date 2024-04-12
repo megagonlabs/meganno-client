@@ -1,15 +1,27 @@
 # Welcome to MEGAnno documentation
 ## What is MEGAnno?
-MEGAnno is a human-LLM collaborative annotation framework. For cost-efficient and high-quality annotation, we adopt the LLM annotation <strong>--></strong> Human verification workflow where LLM agents label data first and then humans verify a subset of potentially problematic LLM labels.
-![Figure 1. Our human-LLM collaborative workflow.](assets/images/meganno_site_fig1.png)
-<br/><span style="color: gray;">*Figure 1. Our human-LLM collaborative workflow.*</span>
+Many existing data annotation tools are focussed on the annotator enabling them to annotate data and manage annotation activities.  Instead, MEGAnno is an open-source data annotation tool that puts the data scientist first, enabling you to bootstrap annotation tasks and manage the continual evolution of annotations through the machine learning lifecycle.  
 
-Our features include:
+In addition, MEGAnno’s unique capabilities include: 
 
-* Effective LLM agent and annotation management
-* Convenient and robust LLM annotation
-* Exploration and verification of LLM labels by humans
-* Seamless annotation experience within Jupyter notebooks
+* A back-end service that acts as a single source of truth and stores/manages all the evolution of annotation information through the lifecycle. 
+
+* Power tools to explore data sets and select the best data to label.  Accommodations for active learning and other techniques to prioritize your labeling work.
+
+* Explore the distribution of labels and the behavior of labelers to make decisions for subsequent labeling batches.  
+
+* A data scientist-focused experience enabling you to manage annotation directly in your notebooks.  This allows you to utilize existing Python functions and our built-in power tools to optimize your annotation process.                       
+* Seamlessly incorporate both human and LLM data labels with verification workflows and integration to popular LLMs.  This enables LLM agents to label data first and humans focus on verifying a subset of potentially problematic LLM labels.
+
+## How to get started?
+
+There are 2 ways to get started with MEGAnno:
+
+1. Demo system access.  
+For your convenience, we prepared a Google Colab notebook for this demo. To run the Colab notebook, you’ll need a Google account, an OpenAI API key, and a MEGAnno access token (you can get this by filling out the [request form](https://meganno.github.io/#request_form)).  
+
+2. Your own MEGAnno environment.  
+To setup MEGAnno for your own projects, you can setup your own self-hosted MEGAnno service.  Please follow the [self-hosted instalation instructions](quickstart.md#self-hosted-service)
 
 ## System Overview
 MEGAnno provides two key components: (1) a Python client library featuring interactive widgets and (2) a back-end service consisting of web API and database servers. To use our system, a user can interact with a Jupyter Notebook that has the MEGAnno client installed. Through programmatic interfaces and UI widgets, the client communicates with the service.
@@ -29,19 +41,5 @@ MEGAnno provides two key components: (1) a Python client library featuring inter
 **Label_Metdata**: captures additional aspects of a label, such as LLM confidence score or length of label response, etc.
 
 **Verification**: captures annotations from human users that confirm or update LLM labels
-
-
-
-## Demo
-For Megagon hosted demo, please head to [https://meganno.github.io/](https://meganno.github.io/).
-<video controls width='75%'>
-    <source src="https://meganno.s3.amazonaws.com/eacl-2024-demo.mp4" type="video/mp4">
-</video>
-
-![Labeler's table view](assets/images/table.png)
-<br/><span style="color: gray;">*Table view of the annotation widget. Data examples are organized in a table for better exploration and comparison. Users can also search over, sort or filter on data and annotations.*</span>
-
-![Labeler's single view](assets/images/single.png)
-<br/><span style="color: gray;">*Single view of the annotation widget showing one data example at a time. With more space, the single view is more suitable for span-level tasks like extraction.*</span>
 
 Please see the [Getting Started](quickstart.md) page for setup instructions and the [Advanced Features](advanced.md) page for more cool features we provide.
