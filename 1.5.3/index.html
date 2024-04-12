@@ -312,18 +312,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-overview" class="md-nav__link">
+  <a href="#how-to-get-started" class="md-nav__link">
     <span class="md-ellipsis">
-      System Overview
+      How to get started?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
+  <a href="#system-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Demo
+      System Overview
     </span>
   </a>
   
@@ -618,16 +618,35 @@
 
 <h1 id="welcome-to-meganno-documentation">Welcome to MEGAnno documentation</h1>
 <h2 id="what-is-meganno">What is MEGAnno?</h2>
-<p>MEGAnno is a human-LLM collaborative annotation framework. For cost-efficient and high-quality annotation, we adopt the LLM annotation <strong>--&gt;</strong> Human verification workflow where LLM agents label data first and then humans verify a subset of potentially problematic LLM labels.
-<img alt="Figure 1. Our human-LLM collaborative workflow." src="assets/images/meganno_site_fig1.png" />
-<br/><span style="color: gray;"><em>Figure 1. Our human-LLM collaborative workflow.</em></span></p>
-<p>Our features include:</p>
+<p>Many existing data annotation tools are focussed on the annotator enabling them to annotate data and manage annotation activities.  Instead, MEGAnno is an open-source data annotation tool that puts the data scientist first, enabling you to bootstrap annotation tasks and manage the continual evolution of annotations through the machine learning lifecycle.  </p>
+<p>In addition, MEGAnno’s unique capabilities include: </p>
 <ul>
-<li>Effective LLM agent and annotation management</li>
-<li>Convenient and robust LLM annotation</li>
-<li>Exploration and verification of LLM labels by humans</li>
-<li>Seamless annotation experience within Jupyter notebooks</li>
+<li>
+<p>A back-end service that acts as a single source of truth and stores/manages all the evolution of annotation information through the lifecycle. </p>
+</li>
+<li>
+<p>Power tools to explore data sets and select the best data to label.  Accommodations for active learning and other techniques to prioritize your labeling work.</p>
+</li>
+<li>
+<p>Explore the distribution of labels and the behavior of labelers to make decisions for subsequent labeling batches.  </p>
+</li>
+<li>
+<p>A data scientist-focused experience enabling you to manage annotation directly in your notebooks.  This allows you to utilize existing Python functions and our built-in power tools to optimize your annotation process.                       </p>
+</li>
+<li>Seamlessly incorporate both human and LLM data labels with verification workflows and integration to popular LLMs.  This enables LLM agents to label data first and humans focus on verifying a subset of potentially problematic LLM labels.</li>
 </ul>
+<h2 id="how-to-get-started">How to get started?</h2>
+<p>There are 2 ways to get started with MEGAnno:</p>
+<ol>
+<li>
+<p>Demo system access.<br />
+For your convenience, we prepared a Google Colab notebook for this demo. To run the Colab notebook, you’ll need a Google account, an OpenAI API key, and a MEGAnno access token (you can get this by filling out the <a href="https://meganno.github.io/#:~:text=filling%20out%20the-,request,-form%20above">request form</a>).  </p>
+</li>
+<li>
+<p>Your own MEGAnno environment.<br />
+To setup MEGAnno for your own projects, you can setup your own self-hosted MEGAnno service.  Please follow the <a href="quickstart/#self-hosted-service">self-hosted instalation instructions</a></p>
+</li>
+</ol>
 <h2 id="system-overview">System Overview</h2>
 <p>MEGAnno provides two key components: (1) a Python client library featuring interactive widgets and (2) a back-end service consisting of web API and database servers. To use our system, a user can interact with a Jupyter Notebook that has the MEGAnno client installed. Through programmatic interfaces and UI widgets, the client communicates with the service.
 <img alt="Figure 2. Overview of MEGAnno+ system." src="assets/images/meganno_site_fig2.png" />
@@ -639,16 +658,6 @@
 <p><strong>Label</strong>: stores the label assigned to a particular <em>Record</em></p>
 <p><strong>Label_Metdata</strong>: captures additional aspects of a label, such as LLM confidence score or length of label response, etc.</p>
 <p><strong>Verification</strong>: captures annotations from human users that confirm or update LLM labels</p>
-<h2 id="demo">Demo</h2>
-<p>For Megagon hosted demo, please head to <a href="https://meganno.github.io/">https://meganno.github.io/</a>.</p>
-<video controls width='75%'>
-    <source src="https://meganno.s3.amazonaws.com/eacl-2024-demo.mp4" type="video/mp4">
-</video>
-
-<p><img alt="Labeler's table view" src="assets/images/table.png" />
-<br/><span style="color: gray;"><em>Table view of the annotation widget. Data examples are organized in a table for better exploration and comparison. Users can also search over, sort or filter on data and annotations.</em></span></p>
-<p><img alt="Labeler's single view" src="assets/images/single.png" />
-<br/><span style="color: gray;"><em>Single view of the annotation widget showing one data example at a time. With more space, the single view is more suitable for span-level tasks like extraction.</em></span></p>
 <p>Please see the <a href="quickstart/">Getting Started</a> page for setup instructions and the <a href="advanced/">Advanced Features</a> page for more cool features we provide.</p>
 
 
