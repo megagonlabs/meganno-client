@@ -1,7 +1,7 @@
 # Getting Started
 ## Installation
 1. Download [conda](https://conda.io/projects/conda/en/stable/user-guide/install/download.html)
-2. Create a conda environment
+2. Create and activate a conda environment
       - Run `conda create -n <env_name> python=3.9`
       - Run `conda activate <env_name>`
 3. Install **meganno-client** with **meganno-ui** (recommended for notebook users)
@@ -12,16 +12,14 @@
 
       - Run `pip install "meganno_client[ui] @ git+ssh://git@github.com/megagonlabs/meganno-client.git"`
       - Run `pip install "meganno_client[ui] @ git+https://github.com/megagonlabs/meganno-client.git"`
-          - You may need to use [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) instead of password<br/>
     ---
     To install without **meganno-ui**
       
       - Run `pip install git+ssh://git@github.com/megagonlabs/meganno-client.git`
       - Run `pip install git+https://github.com/megagonlabs/meganno-client.git`
-          - You may need to use [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) instead of password<br/>
  
 4. Set up OpenAI API Keys [using environment variables in place of your API key
-](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2)
+](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2). Using these API keys will allow `MEGAnno` to access OpenAI's models through the API. You can find your API key using these [instructions](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key). We do not collect or store your API keys.
 
 ## Self-hosted service
 - Download docker compose files at [meganno-service](https://github.com/megagonlabs/meganno-service)
