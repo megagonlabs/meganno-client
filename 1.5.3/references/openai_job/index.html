@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#labeler_client.llm_jobs.OpenAIJob" class="md-skip">
+        <a href="#meganno_client.llm_jobs.OpenAIJob" class="md-skip">
           Skip to content
         </a>
       
@@ -541,7 +541,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob" class="md-nav__link">
     <span class="md-ellipsis">
       OpenAIJob
     </span>
@@ -551,7 +551,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.__init__" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.__init__" class="md-nav__link">
     <span class="md-ellipsis">
       __init__
     </span>
@@ -560,7 +560,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.set_openai_api_key" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.set_openai_api_key" class="md-nav__link">
     <span class="md-ellipsis">
       set_openai_api_key
     </span>
@@ -569,7 +569,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.validate_openai_api_key" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.validate_openai_api_key" class="md-nav__link">
     <span class="md-ellipsis">
       validate_openai_api_key
     </span>
@@ -578,7 +578,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.validate_model_config" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.validate_model_config" class="md-nav__link">
     <span class="md-ellipsis">
       validate_model_config
     </span>
@@ -587,7 +587,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.is_valid_prompt" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.is_valid_prompt" class="md-nav__link">
     <span class="md-ellipsis">
       is_valid_prompt
     </span>
@@ -596,7 +596,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.generate_prompts" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.generate_prompts" class="md-nav__link">
     <span class="md-ellipsis">
       generate_prompts
     </span>
@@ -605,7 +605,25 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.preprocess" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.get_response_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_response_length
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.get_openai_conf_score" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_openai_conf_score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.preprocess" class="md-nav__link">
     <span class="md-ellipsis">
       preprocess
     </span>
@@ -614,7 +632,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.get_llm_annotations" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.get_llm_annotations" class="md-nav__link">
     <span class="md-ellipsis">
       get_llm_annotations
     </span>
@@ -623,7 +641,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.extract" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.extract" class="md-nav__link">
     <span class="md-ellipsis">
       extract
     </span>
@@ -632,7 +650,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#labeler_client.llm_jobs.OpenAIJob.post_process_annotations" class="md-nav__link">
+  <a href="#meganno_client.llm_jobs.OpenAIJob.post_process_annotations" class="md-nav__link">
     <span class="md-ellipsis">
       post_process_annotations
     </span>
@@ -698,8 +716,8 @@
 
 
 
-<h2 id="labeler_client.llm_jobs.OpenAIJob" class="doc doc-heading">
-          <code>labeler_client.llm_jobs.OpenAIJob</code>
+<h2 id="meganno_client.llm_jobs.OpenAIJob" class="doc doc-heading">
+          <code>meganno_client.llm_jobs.OpenAIJob</code>
 
 
 </h2>
@@ -728,7 +746,7 @@
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.__init__" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.__init__" class="doc doc-heading">
           <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">label_schema</span><span class="o">=</span><span class="p">{},</span> <span class="n">label_names</span><span class="o">=</span><span class="p">[],</span> <span class="n">records</span><span class="o">=</span><span class="p">[],</span> <span class="n">model_config</span><span class="o">=</span><span class="p">{},</span> <span class="n">prompt_template</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
@@ -833,7 +851,7 @@
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.set_openai_api_key" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.set_openai_api_key" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">set_openai_api_key</span><span class="p">(</span><span class="n">openai_api_key</span><span class="p">,</span> <span class="n">openai_organization</span><span class="p">)</span></code>
 
 </h3>
@@ -896,7 +914,7 @@
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.validate_openai_api_key" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.validate_openai_api_key" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">validate_openai_api_key</span><span class="p">(</span><span class="n">openai_api_key</span><span class="p">,</span> <span class="n">openai_organization</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -1021,7 +1039,7 @@
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.validate_model_config" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.validate_model_config" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">validate_model_config</span><span class="p">(</span><span class="n">model_config</span><span class="p">,</span> <span class="n">api_name</span><span class="o">=</span><span class="s1">&#39;chat&#39;</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -1136,7 +1154,7 @@
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.is_valid_prompt" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.is_valid_prompt" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">is_valid_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span></code>
 
 </h3>
@@ -1210,7 +1228,7 @@ We use the approximation 1 word ~ 1.33 tokens</p>
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.generate_prompts" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.generate_prompts" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">generate_prompts</span><span class="p">()</span></code>
 
 </h3>
@@ -1253,7 +1271,45 @@ We use the approximation 1 word ~ 1.33 tokens</p>
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.preprocess" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.get_response_length" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_response_length</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the length of the openai response</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="meganno_client.llm_jobs.OpenAIJob.get_openai_conf_score" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_openai_conf_score</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns confidence score of the label, calculated using average of logit scores</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="meganno_client.llm_jobs.OpenAIJob.preprocess" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">preprocess</span><span class="p">()</span></code>
 
 </h3>
@@ -1296,7 +1352,7 @@ We use the approximation 1 word ~ 1.33 tokens</p>
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.get_llm_annotations" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.get_llm_annotations" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">get_llm_annotations</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_retrials</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">api_name</span><span class="o">=</span><span class="s1">&#39;chat&#39;</span><span class="p">,</span> <span class="n">label_meta_names</span><span class="o">=</span><span class="p">[])</span></code>
 
 </h3>
@@ -1420,7 +1476,7 @@ We use the approximation 1 word ~ 1.33 tokens</p>
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.extract" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.extract" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">extract</span><span class="p">(</span><span class="n">uuid</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">fuzzy_extraction</span><span class="p">)</span></code>
 
 </h3>
@@ -1520,7 +1576,7 @@ We use the approximation 1 word ~ 1.33 tokens</p>
 
 
 
-<h3 id="labeler_client.llm_jobs.OpenAIJob.post_process_annotations" class="doc doc-heading">
+<h3 id="meganno_client.llm_jobs.OpenAIJob.post_process_annotations" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">post_process_annotations</span><span class="p">(</span><span class="n">fuzzy_extraction</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h3>
