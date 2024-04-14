@@ -1,1 +1,1 @@
-## ::: labeler_client.service.Service
+## ::: meganno_client.service.Service

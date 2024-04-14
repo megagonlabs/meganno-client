@@ -1,1 +1,1 @@
-## ::: labeler_client.llm_jobs.OpenAIJob
+## ::: meganno_client.llm_jobs.OpenAIJob

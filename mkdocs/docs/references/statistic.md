@@ -1,1 +1,1 @@
-## ::: labeler_client.statistic.Statistic
+## ::: meganno_client.statistic.Statistic

@@ -1,1 +1,1 @@
-## ::: labeler_client.schema.Schema
+## ::: meganno_client.schema.Schema
