@@ -359,8 +359,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Roles">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#role-access" class="md-nav__link">
@@ -368,11 +367,6 @@
       Role Access
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -748,33 +742,7 @@
 </ul>
 </li>
 </ol>
-<h4 id="role-access">Role Access</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Method</th>
-<th style="text-align: left;">API Endpoint</th>
-<th style="text-align: left;">Required Role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>GET</code></td>
-<td style="text-align: left;">/agents/<string:agent_uuid>/jobs</td>
-<td style="text-align: left;"><code>administrator</code> <code>contributor</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>GET</code></td>
-<td style="text-align: left;">/agents/jobs</td>
-<td style="text-align: left;"><code>administrator</code> <code>contributor</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>POST</code></td>
-<td style="text-align: left;">/agents/<string:agent_uuid>/jobs/<string:job_uuid><br/>/annotations/<string:record_uuid></td>
-<td style="text-align: left;"><code>administrator</code> <code>contributor</code> <code>job</code></td>
-</tr>
-</tbody>
-</table>
+<h3 id="role-access">Role Access</h3>
 <table border=1>
     <thead>
         <tr>
@@ -807,11 +775,105 @@
             <td rowspan=2><code>administrator</code> <code>contributor</code> <code>job</code></td>
         </tr>
         <tr>
-            <td rowspan=2><code>POST</code></td>
+            <td rowspan=3><code>POST</code></td>
             <td>/annotations/batch</td>
         </tr>
         <tr>
             <td>/annotations/&#60;string:record_uuid&#62;/labels</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td>/annotations/label_metadata</td>
+            <td><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code></td>
+            <td>/assignments</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>POST</code></td>
+            <td>
+                /data
+                <br/>
+                /data/metadata
+            </td>
+            <td><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /data/export
+                <br/>
+                /data/suggest_similar
+            </td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td rowspan=2>/schemas</td>
+            <td><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td><code>POST</code></td>
+            <td><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>POST</code></td>
+            <td>/verifications/&#60;string:record_uuid&#62;/labels</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td rowspan=2><code>GET</code></td>
+            <td>
+                /annotations
+                <br/>
+                /view/record
+                <br/>
+                /view/annotation
+                <br/>
+                /view/verifications
+            </td>
+            <td><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td>/reconciliations</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /statistics/annotator/contributions
+                <br/>
+                /statistics/annotator/agreements
+                <br/>
+                /statistics/embeddings/&#60;embed_type&#62;
+                <br/>
+                /statistics/label/progress
+                <br/>
+                /statistics/label/distributions
+            </td>
+            <td><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code> <code>PUT</code> <code>DELETE</code></td>
+            <td>
+                /invitations
+            </td>
+            <td rowspan=2><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /invitations/&#60;invitation_code&#62;
+            </td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code> <code>DELETE</code></td>
+            <td>
+                /tokens
+            </td>
+            <td><code>administrator</code> <code>contributor</code></td>
         </tr>
     </tbody>
 </table>
