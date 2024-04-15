@@ -1,29 +1,10 @@
 # Getting Started
 ## Installation
-1. Download [conda](https://conda.io/projects/conda/en/stable/user-guide/install/download.html)
-2. Create and activate a conda environment
-      - Run `conda create -n <env_name> python=3.9`
-      - Run `conda activate <env_name>`
-3. Install **meganno-client** with **meganno-ui** (recommended for notebook users)
-   
-    > You can use either `SSH` or `HTTPS` to install this python package.
-    
-    > Add @vx.x.x tag after the github URL
-
-      - Run `pip install "meganno_client[ui] @ git+ssh://git@github.com/megagonlabs/meganno-client.git"`
-      - Run `pip install "meganno_client[ui] @ git+https://github.com/megagonlabs/meganno-client.git"`
-    ---
-    To install without **meganno-ui**
-      
-      - Run `pip install git+ssh://git@github.com/megagonlabs/meganno-client.git`
-      - Run `pip install git+https://github.com/megagonlabs/meganno-client.git`
- 
-4. Set up OpenAI API Keys [using environment variables in place of your API key
-](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2). Using these API keys will allow `MEGAnno` to access OpenAI's models through the API. You can find your API key using these [instructions](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key). We do not collect or store your API keys.
+- Follow [instructions](https://github.com/megagonlabs/meganno-client?tab=readme-ov-file#installation) here to install meganno-client
 
 ## Self-hosted service
 - Download docker compose files at [meganno-service](https://github.com/megagonlabs/meganno-service)
-- Follow [setup instructions](https://github.com/megagonlabs/meganno-service?tab=readme-ov-file#set-up-services)
+- Follow [setup instructions](https://github.com/megagonlabs/meganno-service?tab=readme-ov-file#set-up-services) here to launch meganno backend services
 
 ## Authentication
 We have 2 ways to authenticate with the service:
@@ -45,7 +26,7 @@ We have 2 ways to authenticate with the service:
     ```
 
 ### Roles
-MEGAnno supports 2 types of user roles: Admin and Contributor. Admin users are project owners deploying the services; they have full access to the project such as importing data or updating schemas. Admin users can invite contributors by sharing invitation code(s) with them. Contributors can only access their own annotation namespace and cannot modify the project.
+MEGAnno supports 2 types of user roles: Admin and Contributor. Admin users are project owners deploying the services; they have full access to the project such as importing data or updating schemas. **Admin users can invite contributors by sharing invitation code(s) with them.** Contributors can only access their own annotation namespace and cannot modify the project.
 
 To invite contributors, follow the instructions below:
 
@@ -75,3 +56,139 @@ admin.revoke_invitation(id="<invitation_code_id>")
     - After executing `auth = Authentication(project="<project_name>")`, a new browser tab will present itself.
     - Clicking on "Sign up" at the bottom of the dialog, and you will be taken to the sign up page.
     ![Sign-up](assets/images/signup.png){: style="width:300px"}
+
+### Role Access
+<table border=1>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Route</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>GET</code> <code>POST</code></td>
+            <td>/agents</td>
+            <td rowspan=2><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /agents/jobs
+                <br/>
+                /agents/&#60;string:agent_uuid&#62;/jobs
+            </td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code></td>
+            <td>
+                /agents/&#60;string:agent_uuid&#62;/jobs/&#60;string:job_uuid&#62;
+                <br/>
+                /annotations/&#60;string:record_uuid&#62;
+            </td>
+            <td rowspan=2><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td rowspan=3><code>POST</code></td>
+            <td>/annotations/batch</td>
+        </tr>
+        <tr>
+            <td>/annotations/&#60;string:record_uuid&#62;/labels</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td>/annotations/label_metadata</td>
+            <td><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code></td>
+            <td>/assignments</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>POST</code></td>
+            <td>
+                /data
+                <br/>
+                /data/metadata
+            </td>
+            <td><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /data/export
+                <br/>
+                /data/suggest_similar
+            </td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td rowspan=2>/schemas</td>
+            <td><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td><code>POST</code></td>
+            <td><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>POST</code></td>
+            <td>/verifications/&#60;string:record_uuid&#62;/labels</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td rowspan=2><code>GET</code></td>
+            <td>
+                /annotations
+                <br/>
+                /view/record
+                <br/>
+                /view/annotation
+                <br/>
+                /view/verifications
+            </td>
+            <td><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td>/reconciliations</td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /statistics/annotator/contributions
+                <br/>
+                /statistics/annotator/agreements
+                <br/>
+                /statistics/embeddings/&#60;embed_type&#62;
+                <br/>
+                /statistics/label/progress
+                <br/>
+                /statistics/label/distributions
+            </td>
+            <td><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code> <code>PUT</code> <code>DELETE</code></td>
+            <td>
+                /invitations
+            </td>
+            <td rowspan=2><code>administrator</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /invitations/&#60;invitation_code&#62;
+            </td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code> <code>DELETE</code></td>
+            <td>
+                /tokens
+            </td>
+            <td><code>administrator</code> <code>contributor</code></td>
+        </tr>
+    </tbody>
+</table>

@@ -109,7 +109,7 @@ s_union = s1 | s2 # or s1.union(s2)
 s_diff = s1 - s2 # or s1.difference(s2)
 ```
 
-## Dashboard
+## Dashboard (administrator-only)
 Labeler provides a built-in visual monitoring dashboard to help users to get real-time status of the annotation project. As projects evolve, users would often need to understand the project’s status to make decisions about the next steps, like collecting more data points with certain characteristics or adding a new class to the task definition. To aid such analysis, the dashboard widget packs common statistics and analytical visualizations (e.g., annotation progress, distribution of labels, annotator agreement, etc.) based on a survey of our pilot users.
 
 ![dashboard](assets/images/dashboard.png)
