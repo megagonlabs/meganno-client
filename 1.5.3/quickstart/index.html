@@ -359,6 +359,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Access
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -733,6 +748,73 @@
 </ul>
 </li>
 </ol>
+<h4 id="role-access">Role Access</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">API Endpoint</th>
+<th style="text-align: left;">Required Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;">/agents/<string:agent_uuid>/jobs</td>
+<td style="text-align: left;"><code>administrator</code> <code>contributor</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;">/agents/jobs</td>
+<td style="text-align: left;"><code>administrator</code> <code>contributor</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;">/agents/<string:agent_uuid>/jobs/<string:job_uuid><br/>/annotations/<string:record_uuid></td>
+<td style="text-align: left;"><code>administrator</code> <code>contributor</code> <code>job</code></td>
+</tr>
+</tbody>
+</table>
+<table border=1>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Route</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>GET</code> <code>POST</code></td>
+            <td>/agents</td>
+            <td rowspan=2><code>administrator</code> <code>contributor</code></td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>
+                /agents/jobs
+                <br/>
+                /agents/&#60;string:agent_uuid&#62;/jobs
+            </td>
+        </tr>
+        <tr>
+            <td><code>GET</code> <code>POST</code></td>
+            <td>
+                /agents/&#60;string:agent_uuid&#62;/jobs/&#60;string:job_uuid&#62;
+                <br/>
+                /annotations/&#60;string:record_uuid&#62;
+            </td>
+            <td rowspan=2><code>administrator</code> <code>contributor</code> <code>job</code></td>
+        </tr>
+        <tr>
+            <td rowspan=2><code>POST</code></td>
+            <td>/annotations/batch</td>
+        </tr>
+        <tr>
+            <td>/annotations/&#60;string:record_uuid&#62;/labels</td>
+        </tr>
+    </tbody>
+</table>
 
 
 
