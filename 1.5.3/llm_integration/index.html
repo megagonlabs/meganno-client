@@ -20,7 +20,7 @@
     
     
       
-        <title>LLM integration - meganno-client Doc</title>
+        <title>LLM Integration - meganno-client Doc</title>
       
     
     
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LLM integration
+              LLM Integration
             
           </span>
         </div>
@@ -352,7 +352,7 @@
           
   
   <span class="md-ellipsis">
-    LLM integration
+    LLM Integration
   </span>
   
 
@@ -363,7 +363,7 @@
         
   
   <span class="md-ellipsis">
-    LLM integration
+    LLM Integration
   </span>
   
 
@@ -396,7 +396,7 @@
         <li class="md-nav__item">
   <a href="#verification-subset-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Verification subset selection
+      Verification Subset Selection
     </span>
   </a>
   
@@ -580,6 +580,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/prompt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PromptTemplate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -619,27 +640,39 @@
 
 
 <h1 id="llm-integration">LLM Integration</h1>
-<p>This <a href="https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%203%20-%20LLM%20integration.ipynb">notebook</a> provides the flow for integrating LLMs within MEGAnno</p>
-<p>MEGAnno offers a simple human-LLM collaborative annotation workflow: LLM annotation followed by human verification. Put simply, LLM agents label data first (Figure 2, step ①), and humans verify LLM labels as needed. For most tasks and datasets one can use LLM labels as is; for some subset of difficult or uncertain instances (Figure 2, step ②), humans can verify LLM labels – confirm the right ones and correct the wrong ones (Figure 2, step ③). In this way, the LLM annotation part can be automated, and human efforts can be directed to where they are most needed to improve the quality of final labels.</p>
-<p><img alt="Figure 1. Human-LLM collaborative workflow" src="../assets/images/meganno_site_llm_human.png" />
-<br/><span style="color: gray; text-align:center;",><em>Figure 1. Human-LLM collaborative workflow</em></span></p>
+<p>This <a href="https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%203%20-%20LLM%20integration.ipynb">notebook</a> provides an example workflow of utilizing LLMs as annotation agents within MEGAnno.</p>
+<!-- ![Figure 1. Human-LLM collaborative workflow.](assets/images/meganno_site_llm_human.png) -->
+<p><img src="../assets/images/meganno_site_llm_human.png" alt="Figure 1. Human-LLM collaborative workflow." width="300">
+<br/><span style="color: gray; text-align:center;",><em>Figure 1. Human-LLM collaborative workflow.</em></span></p>
+<p>MEGAnno offers a simple human-LLM collaborative annotation workflow: LLM annotation followed by human verification. Put simply, LLM agents label data first (Figure 1, step ①), and humans verify LLM labels as needed. For most tasks and datasets one can use LLM labels as is; for some subset of difficult or uncertain instances (Figure 1, step ②), humans can verify LLM labels – confirm the right ones and correct the wrong ones (Figure 1, step ③). In this way, the LLM annotation part can be automated, and human efforts can be directed to where they are most needed to improve the quality of final labels.</p>
+<p>An overview of the entire system and key concepts are shown below.</p>
+<p><img alt="Figure 2. Overview of MEGAnno+ system." src="../assets/images/meganno_site_overview.png" />
+<br/><span style="color: gray; text-align:center;",><em>Figure 2. Overview of MEGAnno+ system.</em></span></p>
+<p><strong>Subset</strong>: refers to a slice of data created from user-defined searches. </p>
+<p><strong>Record</strong>: refers to an item within the data corpus. </p>
+<p><strong>Agent</strong>: an <em>Agent</em> is defined by the configuration of the LLM (e.g., model’s name, version, and hyper-parameters) and a prompt template. </p>
+<p><strong>Job</strong>: when an <em>Agent</em> is employed to annotate a selected data <em>Subset</em>, the execution is referred to as a Job.</p>
+<p><strong>Label</strong>: stores the label assigned to a particular <em>Record</em></p>
+<p><strong>Label_Metadata</strong>: captures additional aspects of a label, such as LLM confidence score or length of label response, etc.</p>
+<p><strong>Verification</strong>: captures annotations from human users that confirm or update LLM labels</p>
 <h2 id="llm-annotation">LLM Annotation</h2>
-<p>There are 3 major steps to LLM annotation using MEGAnno, as shown in the figure below. </p>
-<p><img alt="Figure 2. Steps in the LLM annotation workflow." src="../assets/images/meganno_site_fig1.png" />
-<br/><span style="color: gray; text-align:center;",><em>Figure 2. Steps in the LLM annotation workflow.</em></span></p>
-<p>The <em>preprocessing</em> step handles the generation of prompts and validation of model configuration.</p>
-<p>Users can specify a particular LLM model, define its configurations and customize a prompt template. This defines an <em>Agent</em> which can be used for the annotation task. You may also re-use an <em>Agent</em>.</p>
+<p>MEGAnno achieves LLM annotation in three steps, as shown in the figure below. </p>
+<p><img alt="Figure 3. Steps in the LLM annotation workflow." src="../assets/images/meganno_site_fig1.png" />
+<br/><span style="color: gray; text-align:center;",><em>Figure 3. Steps in the LLM annotation workflow.</em></span></p>
+<p>The <em>preprocessing</em> step handles the generation of prompts and validation of model configuration.
+Users can specify a particular LLM model, define its configurations and customize a prompt template (Figure 4). This defines an <em>Agent</em> which can be used for the annotation task. Registered <em>Agents</em> can be reused later.</p>
+<p><img alt="Figure 4. Prompt Template UI. Users can customize task instructions and preview generated prompts." src="../assets/images/meganno-blog-prompt_template_customize-crop.gif" />
+<br/><span style="color: gray; text-align:center;",><em>Figure 4. Prompt Template UI. Users can customize task instructions and preview generated prompts.</em></span></p>
 <p>After the selected model configuration is validated, the next step is <em>calling the LLM</em>. MEGAnno handles the call to the external LLM API to obtain LLM responses. Any API errors encountered during the call are also appropriately handled and a suitable message is relayed to the user. </p>
-<p>Once the responses are obtained, the <em>post-processing</em> step extracts the label from the LLM response. This ensures some minor deviations in the LLM's response (such as trailing period) are handled. Furthermore, users can set <code>fuzzy_extraction=True</code> which performs a fuzzy match between the LLM response and the label schema space, and if a significant match is found the corresponding label is attributed for the task. The figure below shows how MEGAnno's post-processing mechanism handles several LLM responses.</p>
-<p><img alt="Figure 3. Example LLM responses and post-processing results by MEGAnno" src="../assets/images/meganno_site_post_process.png" />
-<br/><span style="color: gray; text-align:center;",><em>Figure 3. Example LLM responses and post-processing results by MEGAnno</em></span></p>
-<h2 id="verification-subset-selection">Verification subset selection</h2>
+<p>Once the responses are obtained, the <em>post-processing</em> step extracts the label from the LLM response. Our post-processing step ensures some minor deviations in the LLM's response (such as trailing period) are handled. Furthermore, users can set <code>fuzzy_extraction=True</code> which performs a fuzzy match between the LLM response and the label schema space, and if a significant match is found the corresponding label is attributed for the task. The figure below shows how MEGAnno's post-processing mechanism handles several LLM responses.</p>
+<p><img alt="Figure 5. Example LLM responses and post-processing results by MEGAnno." src="../assets/images/meganno_site_post_process.png" />
+<br/><span style="color: gray; text-align:center;",><em>Figure 5. Example LLM responses and post-processing results by MEGAnno.</em></span></p>
+<h2 id="verification-subset-selection">Verification Subset Selection</h2>
 <p>It would be redundant for a human to verify every annotation in the dataset as that would defeat the purpose of using LLMs for a cheap and faster annotation process. Instead, MEGAnno provides a possibility to aid the human verifiers by computing confidence scores for each annotation. Users can specify <code>confidence_score</code> of the LLM labels to be computed and stored. They can then view the confidence scores, and even sort as well as filter over them to obtain only those annotations for which the LLM had low confidence scores. This will ease the human verification process and make it more efficient.</p>
 <h2 id="human-verification">Human Verification</h2>
-<p>Users can then use MEGAnno's in-notebook widget to verify LLM labels i.e. either <em>confirm</em> a label as correct or <em>reject</em> the label and specify a correct label. Users may view the final annotations and export the data for further downstream tasks or analysis. </p>
-<p>An overview of the entire system is shown below</p>
-<p><img alt="Figure 4. Overview of MEGAnno+ system." src="../assets/images/meganno_site_overview.png" />
-<br/><span style="color: gray; text-align:center;",><em>Figure 4. Overview of MEGAnno+ system.</em></span></p>
+<p>Users can then use MEGAnno's in-notebook widget to verify LLM labels i.e., either <em>confirm</em> a label as correct or <em>reject</em> the label and specify a correct label. Users may view the final annotations and export the data for downstream tasks or further analysis. </p>
+<p><img alt="Figure 6. Verification UI for exploring data and confirming/correcting LLM labels." src="../assets/images/meganno_site_verification.gif" />
+<br/><span style="color: gray; text-align:center;",><em>Figure 6. Verification UI for exploring data and confirming/correcting LLM labels.</em></span></p>
 
 
 

@@ -305,6 +305,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -333,6 +335,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -341,16 +345,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Usages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic Usages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#setting-schema" class="md-nav__link">
     <span class="md-ellipsis">
       Setting Schema
@@ -358,8 +352,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#importing-data" class="md-nav__link">
     <span class="md-ellipsis">
       Importing Data
@@ -367,8 +361,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#exploratory-labeling" class="md-nav__link">
     <span class="md-ellipsis">
       Exploratory Labeling
@@ -409,18 +403,13 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#exporting" class="md-nav__link">
     <span class="md-ellipsis">
       Exporting
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -463,7 +452,7 @@
         
   
   <span class="md-ellipsis">
-    LLM integration
+    LLM Integration
   </span>
   
 
@@ -633,6 +622,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/prompt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PromptTemplate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -671,14 +681,12 @@
   
 
 
-  <h1>Basic Usages</h1>
-
-<h2 id="basic-usages">Basic Usages</h2>
-<p>Please also refer to this <a href="https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%201%20-%20Basic%20pipeline.ipynb">notebook</a> for a running example of the basic pipeline of using labeler in a notebook.</p>
-<h3 id="setting-schema">Setting Schema</h3>
+<h1 id="basic-usages">Basic Usages</h1>
+<p>Please also refer to this <a href="https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%201%20-%20Basic%20pipeline.ipynb">notebook</a> for a running example of the basic pipeline of using MEGAnno in a notebook.</p>
+<h2 id="setting-schema">Setting Schema</h2>
 <p><em>Schema</em> defines the annotation task. Example of setting schema for a sentiment analysis task with positive and negative options. 
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">set_schemas</span><span class="p">({</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s1">&#39;label_schema&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s2">&quot;label_schema&quot;</span><span class="p">:</span> <span class="p">[</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="p">{</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sentiment&quot;</span><span class="p">,</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> 
@@ -692,7 +700,7 @@
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>       
 </span></code></pre></div>
 A label can be defined to have level <code>record</code> or <code>span</code>. Record-level labels correspond to the entire data record, while span-level labels are associated with a text span in the record. See <a href="../advanced/#updating-schema">Updating Schema</a> for an example of a more complex schema.</p>
-<h3 id="importing-data">Importing Data</h3>
+<h2 id="importing-data">Importing Data</h2>
 <p>Given a pandas <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">dataframe</a> like this (example generated from this <a href="https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment">Twitter US Airline Sentiment dataset</a>):</p>
 <table>
 <thead>
@@ -718,22 +726,22 @@ A label can be defined to have level <code>record</code> or <code>span</code>. R
 </table>
 <p>Importing data is easy by providing column names for <code>id</code> which is a unique importing identifier for data records, and <code>content</code> which is the raw text field.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">import_data_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column_mapping</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="s1">&#39;tweet&#39;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;tweet&quot;</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">})</span>
 </span></code></pre></div>
-<h3 id="exploratory-labeling">Exploratory Labeling</h3>
-<p>Not all data points are equally important for downstream models and applications. There are often cases where users might want to prioritize a particular batch (e.g., to achieve better class or domain coverage or focus on the data points that the downstream model cannot predict well). Labeler provides a flexible and controllable way of organizing annotation projects through the exploratory labeling. This annotation process is done by first identifying an interesting subset and assigning labels to data in the subset. We provide a set of “power tools” to help identify valuable subsets.</p>
+<h2 id="exploratory-labeling">Exploratory Labeling</h2>
+<p>Not all data points are equally important for downstream models and applications. There are often cases where users might want to prioritize a particular batch (e.g., to achieve better class or domain coverage or focus on the data points that the downstream model cannot predict well). MEGAnno provides a flexible and controllable way of organizing annotation projects through the exploratory labeling. This annotation process is done by first identifying an interesting subset and assigning labels to data in the subset. We provide a set of “power tools” to help identify valuable subsets.</p>
 <p>The script below shows an example of searching for data records with keyword "delay" and bringing up a widget for annotation in the next cell. More examples <a href="../advanced/#subset-suggestion">here</a>.
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># search results =&gt; subset s1</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s1</span> <span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s1</span> <span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;delay&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># bring up a widget </span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">s1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div></p>
-<h4 id="column-filters">Column Filters</h4>
+<h3 id="column-filters">Column Filters</h3>
 <p><img src="../assets/images/column_filter_reset.png" alt="Column Filters" width="800">
 <br/><span style="color: gray;"><em>To view all column filters, click on "Filters" button; to reset all column filters, click on "Reset filters" button.</em></span></p>
-<h4 id="column-order-visibility">Column Order &amp; Visibility</h4>
+<h3 id="column-order-visibility">Column Order &amp; Visibility</h3>
 <p><img src="../assets/images/column_visibility.png" alt="Column Order & Visibilty" width="500">
 <br/><span style="color: gray;">
 <em>1. To re-order and re-size column, mouse over column drag handler (left grip handler for re-order and right column edge for re-size).</em>
@@ -742,10 +750,10 @@ A label can be defined to have level <code>record</code> or <code>span</code>. R
 <br/>
 <em>3. To reset column ordering and visibility, click on "Reset columns" button.</em>
 </span></p>
-<h4 id="metadata-focus-view">Metadata Focus-view</h4>
+<h3 id="metadata-focus-view">Metadata Focus-view</h3>
 <p><img src="../assets/images/metadata_focusview.png" alt="Metadata Focus-view" width="600">
 <br/><span style="color: gray;"><em>To focus on a single metadata value, click on "Settings" button, then choose a metadata name from the list.</em></span></p>
-<h3 id="exporting">Exporting</h3>
+<h2 id="exporting">Exporting</h2>
 <p>Although iterations can happen within a single notebook, it's easy to export the data, and annotations collected:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># collecting the annotation generated by all annotators</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">demo</span><span class="o">.</span><span class="n">export</span><span class="p">()</span>

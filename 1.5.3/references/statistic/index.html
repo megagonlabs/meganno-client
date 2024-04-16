@@ -343,7 +343,7 @@
         
   
   <span class="md-ellipsis">
-    LLM integration
+    LLM Integration
   </span>
   
 
@@ -611,6 +611,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PromptTemplate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -665,7 +686,7 @@
   <div class="doc doc-contents first">
 
   
-      <p>The Statistic class defines methods which show basic statistics
+      <p>The Statistic class contains methods to show basic statistics
 of the labeling project. Mostly used to back views in the monitoring dashboard.</p>
 
 
@@ -720,7 +741,7 @@ of the labeling project. Mostly used to back views in the monitoring dashboard.<
 
   <div class="doc doc-contents ">
   
-      <p>Get the overall label progress.</p>
+      <p>Get the overall progress of annotation.</p>
 
 
 
@@ -765,7 +786,7 @@ one annotator.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Gets class distributions for specified label.
+      <p>Get the class distribution of a selected label.
 If multiple annotators labeled the same record, aggregate using
 <code>majority vote</code>.</p>
 
@@ -887,7 +908,7 @@ records by each annotator.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Gets pairwise agreement score between all contributing
+      <p>Get pairwise agreement score between all contributing
 annotators to the project, on the specified label. The
 default agreement calculation method is
 <a href="https://towardsdatascience.com/inter-annotator-agreement-2f46c6d37bf3"><code>cohen_kappa</code></a>.</p>
@@ -964,7 +985,7 @@ The higher the scores are, the more frequent the pairs of annotators agree.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Returns 2-dimensional
+      <p>Return 2-dimensional
 <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">TSNE</a>
 projection of the text embedding for data records,
 together with their aggregated labels (using majority votes).

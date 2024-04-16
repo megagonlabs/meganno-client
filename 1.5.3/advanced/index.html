@@ -395,7 +395,7 @@
           <li class="md-nav__item">
   <a href="#regex-based-searches" class="md-nav__link">
     <span class="md-ellipsis">
-      Regex-based searches
+      Regex-based Searches
     </span>
   </a>
   
@@ -411,9 +411,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#subset-computation" class="md-nav__link">
+  <a href="#subset-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      Subset Computation
+      Subset Operations
     </span>
   </a>
   
@@ -452,7 +452,7 @@
         
   
   <span class="md-ellipsis">
-    LLM integration
+    LLM Integration
   </span>
   
 
@@ -622,6 +622,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/prompt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PromptTemplate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -666,7 +687,7 @@
 <p>Annotation requirements can change as projects evolve. To update the schema for a project, simply call <code>set_schemas</code> with the new schema object.
 For example, to expand the schema we set in the basic notebook:
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">set_schemas</span><span class="p">({</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s1">&#39;label_schema&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s2">&quot;label_schema&quot;</span><span class="p">:</span> <span class="p">[</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="p">{</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sentiment&quot;</span><span class="p">,</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> 
@@ -692,12 +713,12 @@ Only the latest schema will be active, but all previous ones will be preserved. 
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">get_schemas</span><span class="p">()</span><span class="o">.</span><span class="n">get_history</span><span class="p">()</span>
 </span></code></pre></div></p>
 <h2 id="metadata">Metadata</h2>
-<p>In Labeler, metadata refers to auxiliary information associated with data records. Labeler takes user-defined functions to generate metadata and uses it to find important subsets and assist human annotators. Here we show two examples.</p>
+<p>In MEGAnno, metadata refers to auxiliary information associated with data records. MEGAnno takes user-defined functions to generate metadata and uses it to find important subsets and assist human annotators. Here we show two examples.</p>
 <p>Example 1:
 Adding <a href="https://www.sbert.net/">sentence bert</a> embeddings for data records. The embeddings can later be used to make similarity computations over records.
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Example 1, adding sentence-bert embedding.</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">SentenceTransformer</span><span class="p">(</span><span class="s1">&#39;all-MiniLM-L6-v2&#39;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">SentenceTransformer</span><span class="p">(</span><span class="s2">&quot;all-MiniLM-L6-v2&quot;</span><span class="p">)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># set metadata generation function </span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">demo</span><span class="o">.</span><span class="n">set_metadata</span><span class="p">(</span><span class="s2">&quot;bert-embedding&quot;</span><span class="p">,</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)),</span> <span class="mi">500</span><span class="p">)</span>
 </span></code></pre></div></p>
@@ -707,40 +728,35 @@ Extracting hashtags as annotation context.
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">def</span> <span class="nf">extract_hashtags</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">hashtag_list</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;#&quot;</span><span class="p">:</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            <span class="n">hashtag_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">[:])</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="c1"># widget can render markdown text</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;- </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">hashtag_list</span><span class="p">])</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;- </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">hashtag_list</span><span class="p">])</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># apply metadata to the project</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">demo</span><span class="o">.</span><span class="n">set_metadata</span><span class="p">(</span><span class="s2">&quot;hashtag&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">extract_hashtags</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">500</span><span class="p">)</span>
 </span></code></pre></div></p>
-<p>With <code>hashtag</code> metadata, Labeler widget can show it as context at annotation time.</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">s1</span><span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>              <span class="n">limit</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>              <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>              <span class="n">meta_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hashtag&#39;</span><span class="p">])</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">s1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<p>With <code>hashtag</code> metadata, MEGAnno widget can show it as context at annotation time.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">s1</span><span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">meta_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hashtag&quot;</span><span class="p">])</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">s1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
 <img alt="hashtag as context" src="../assets/images/table.png" /></p>
 <h2 id="advanced-subset-generation">Advanced Subset Generation</h2>
-<p>In addition to exact keyword matches, Labeler also provides more advanced approaches of generating subsets.</p>
-<h3 id="regex-based-searches">Regex-based searches</h3>
-<p>Labeler supports searches based on regular expressions:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">s2_reg</span><span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s1">&#39;.* (delay) .*&#39;</span><span class="p">,</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                  <span class="n">limit</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                  <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">s2_reg</span><span class="o">.</span><span class="n">show</span><span class="p">({</span><span class="s1">&#39;view&#39;</span><span class="p">:</span><span class="s1">&#39;table&#39;</span><span class="p">})</span>
+<p>In addition to exact keyword matches, MEGAnno also provides more advanced approaches of generating subsets.</p>
+<h3 id="regex-based-searches">Regex-based Searches</h3>
+<p>MEGAnno supports searches based on regular expressions:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">s2_reg</span><span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s2">&quot;.* (delay) .*&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">s2_reg</span><span class="o">.</span><span class="n">show</span><span class="p">({</span><span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="s2">&quot;table&quot;</span><span class="p">})</span>
 </span></code></pre></div></p>
 <h3 id="subset-suggestion">Subset Suggestion</h3>
-<p>Searches initiated by users can help them explore the dataset in a controlled way. Still, the quality of searches is only as good as users’ knowledge about the data and domain. Labeler provides an automated subset suggestion engine to assist with exploration. Embedding-based suggestions make suggestions based on data-embedding vectors provided by the user (as metadata). </p>
+<p>Searches initiated by users can help them explore the dataset in a controlled way. Still, the quality of searches is only as good as users’ knowledge about the data and domain. MEGAnno provides an automated subset suggestion engine to assist with exploration. Embedding-based suggestions make suggestions based on data-embedding vectors provided by the user (as metadata). </p>
 <p>For example, suggest_similar suggests neighbors (based on distance in the embedding space) of data in the querying subset:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">s3</span> <span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># source subset</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">s4</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">suggest_similar</span><span class="p">(</span><span class="s1">&#39;bert-embedding&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># needs to provide a valid meta_name</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">s3</span> <span class="o">=</span> <span class="n">demo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;delay&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># source subset</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">s4</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">suggest_similar</span><span class="p">(</span><span class="s2">&quot;bert-embedding&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># needs to provide a valid meta_name</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">s4</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
-<h3 id="subset-computation">Subset Computation</h3>
-<p>Labeler support set operations to build more subsets from others:
+<h3 id="subset-operations">Subset Operations</h3>
+<p>MEGAnno supports set operations to build more subsets from others:
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># intersection</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">s_intersection</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">&amp;</span> <span class="n">s2</span> <span class="c1"># or s1.intersection(s2)</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># union</span>
@@ -749,7 +765,7 @@ Extracting hashtags as annotation context.
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">s_diff</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span> <span class="c1"># or s1.difference(s2)</span>
 </span></code></pre></div></p>
 <h2 id="dashboard-administrator-only">Dashboard (administrator-only)</h2>
-<p>Labeler provides a built-in visual monitoring dashboard to help users to get real-time status of the annotation project. As projects evolve, users would often need to understand the project’s status to make decisions about the next steps, like collecting more data points with certain characteristics or adding a new class to the task definition. To aid such analysis, the dashboard widget packs common statistics and analytical visualizations (e.g., annotation progress, distribution of labels, annotator agreement, etc.) based on a survey of our pilot users.</p>
+<p>MEGAnno provides a built-in visual monitoring dashboard to help users to get real-time status of the annotation project. As projects evolve, users would often need to understand the project’s status to make decisions about the next steps, like collecting more data points with certain characteristics or adding a new class to the task definition. To aid such analysis, the dashboard widget packs common statistics and analytical visualizations (e.g., annotation progress, distribution of labels, annotator agreement, etc.) based on a survey of our pilot users.</p>
 <p><img alt="dashboard" src="../assets/images/dashboard.png" /></p>
 <p>To bring up the project dashboard:
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">demo</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -757,8 +773,16 @@ Extracting hashtags as annotation context.
 <hr />
 <p>Other features</p>
 <ul>
-<li>Assignment and dispatch</li>
-<li>Multiple annotators and reconciliation</li>
+<li>
+<p>Assignment and dispatch: You may assign a subset to a particular annotator
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">s1</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">annotator_id</span><span class="p">)</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Multiple annotators and reconciliation: You are also able to view a reconciled list of annotations from multiple annotators
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">s1</span><span class="o">.</span><span class="n">get_reconciliation_data</span><span class="p">()</span>
+</span></code></pre></div></p>
+</li>
 </ul>
 
 
@@ -812,13 +836,13 @@ Extracting hashtags as annotation context.
         
         
           
-          <a href="../llm_integration/" class="md-footer__link md-footer__link--next" aria-label="Next: LLM integration">
+          <a href="../llm_integration/" class="md-footer__link md-footer__link--next" aria-label="Next: LLM Integration">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                LLM integration
+                LLM Integration
               </div>
             </div>
             <div class="md-footer__button md-icon">
