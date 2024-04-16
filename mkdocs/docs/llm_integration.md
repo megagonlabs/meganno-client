@@ -1,14 +1,14 @@
 # LLM Integration
 
-This [notebook](https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%203%20-%20LLM%20integration.ipynb) provides the flow for integrating LLMs within MEGAnno
+This [notebook](https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%203%20-%20LLM%20integration.ipynb) provides an example workflow of integrating LLMs within MEGAnno.
 
 
-![Figure 1. Human-LLM collaborative workflow](assets/images/meganno_site_llm_human.png)
-<br/><span style="color: gray; text-align:center;",>*Figure 1. Human-LLM collaborative workflow*</span>
+![Figure 1. Human-LLM collaborative workflow.](assets/images/meganno_site_llm_human.png)
+<br/><span style="color: gray; text-align:center;",>*Figure 1. Human-LLM collaborative workflow.*</span>
 
 MEGAnno offers a simple human-LLM collaborative annotation workflow: LLM annotation followed by human verification. Put simply, LLM agents label data first (Figure 2, step ①), and humans verify LLM labels as needed. For most tasks and datasets one can use LLM labels as is; for some subset of difficult or uncertain instances (Figure 2, step ②), humans can verify LLM labels – confirm the right ones and correct the wrong ones (Figure 2, step ③). In this way, the LLM annotation part can be automated, and human efforts can be directed to where they are most needed to improve the quality of final labels.
 
-An overview of the entire system is shown below
+An overview of the entire system is shown below.
 
 ![Figure 2. Overview of MEGAnno+ system.](assets/images/meganno_site_overview.png)
 <br/><span style="color: gray; text-align:center;",>*Figure 2. Overview of MEGAnno+ system.*</span>
@@ -23,7 +23,7 @@ An overview of the entire system is shown below
 
 **Label**: stores the label assigned to a particular _Record_
 
-**Label_Metdata**: captures additional aspects of a label, such as LLM confidence score or length of label response, etc.
+**Label_Metadata**: captures additional aspects of a label, such as LLM confidence score or length of label response, etc.
 
 **Verification**: captures annotations from human users that confirm or update LLM labels
 
@@ -42,17 +42,16 @@ After the selected model configuration is validated, the next step is _calling t
 
 Once the responses are obtained, the _post-processing_ step extracts the label from the LLM response. This ensures some minor deviations in the LLM's response (such as trailing period) are handled. Furthermore, users can set `fuzzy_extraction=True` which performs a fuzzy match between the LLM response and the label schema space, and if a significant match is found the corresponding label is attributed for the task. The figure below shows how MEGAnno's post-processing mechanism handles several LLM responses.
 
-![Figure 4. Example LLM responses and post-processing results by MEGAnno](assets/images/meganno_site_post_process.png)
-<br/><span style="color: gray; text-align:center;",>*Figure 4. Example LLM responses and post-processing results by MEGAnno*</span>
+![Figure 4. Example LLM responses and post-processing results by MEGAnno.](assets/images/meganno_site_post_process.png)
+<br/><span style="color: gray; text-align:center;",>*Figure 4. Example LLM responses and post-processing results by MEGAnno.*</span>
 
-## Verification subset selection 
+## Verification Subset Selection 
 
 It would be redundant for a human to verify every annotation in the dataset as that would defeat the purpose of using LLMs for a cheap and faster annotation process. Instead, MEGAnno provides a possibility to aid the human verifiers by computing confidence scores for each annotation. Users can specify `confidence_score` of the LLM labels to be computed and stored. They can then view the confidence scores, and even sort as well as filter over them to obtain only those annotations for which the LLM had low confidence scores. This will ease the human verification process and make it more efficient.
 
 ## Human Verification
 
-Users can then use MEGAnno's in-notebook widget to verify LLM labels i.e. either _confirm_ a label as correct or _reject_ the label and specify a correct label. Users may view the final annotations and export the data for further downstream tasks or analysis. 
+Users can then use MEGAnno's in-notebook widget to verify LLM labels i.e., either _confirm_ a label as correct or _reject_ the label and specify a correct label. Users may view the final annotations and export the data for downstream tasks or further analysis. 
 
 ![Figure 5. Verification UI for exploring data and confirming/correcting LLM labels.](assets/images/meganno_site_verification.gif)
 <br/><span style="color: gray; text-align:center;",>*Figure 5. Verification UI for exploring data and confirming/correcting LLM labels.*</span>
-

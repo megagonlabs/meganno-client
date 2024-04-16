@@ -1,12 +1,12 @@
-## Basic Usages
-Please also refer to this [notebook](https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%201%20-%20Basic%20pipeline.ipynb) for a running example of the basic pipeline of using labeler in a notebook.
+# Basic Usages
+Please also refer to this [notebook](https://github.com/megagonlabs/meganno-client/blob/main/Examples/Example%201%20-%20Basic%20pipeline.ipynb) for a running example of the basic pipeline of using MEGAnno in a notebook.
 
 
-### Setting Schema
+## Setting Schema
 *Schema* defines the annotation task. Example of setting schema for a sentiment analysis task with positive and negative options. 
 ```Python
 demo.get_schemas().set_schemas({
-    'label_schema': [
+    "label_schema": [
         {
             "name": "sentiment",
             "level": "record", 
@@ -21,7 +21,7 @@ demo.get_schemas().value(active=True)
 ```
 A label can be defined to have level `record` or `span`. Record-level labels correspond to the entire data record, while span-level labels are associated with a text span in the record. See [Updating Schema](advanced.md#updating-schema) for an example of a more complex schema.
 
-### Importing Data
+## Importing Data
 Given a pandas [dataframe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) like this (example generated from this [Twitter US Airline Sentiment dataset](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)):
 
 |   id | tweet                                        |
@@ -34,27 +34,27 @@ Importing data is easy by providing column names for `id` which is a unique impo
 
 ```python
 demo.import_data_df(df, column_mapping={
-    'id':'id',
-    'content':'tweet'
+    "id": "id",
+    "content": "tweet"
 })
 ```
 
-### Exploratory Labeling
-Not all data points are equally important for downstream models and applications. There are often cases where users might want to prioritize a particular batch (e.g., to achieve better class or domain coverage or focus on the data points that the downstream model cannot predict well). Labeler provides a flexible and controllable way of organizing annotation projects through the exploratory labeling. This annotation process is done by first identifying an interesting subset and assigning labels to data in the subset. We provide a set of “power tools” to help identify valuable subsets.
+## Exploratory Labeling
+Not all data points are equally important for downstream models and applications. There are often cases where users might want to prioritize a particular batch (e.g., to achieve better class or domain coverage or focus on the data points that the downstream model cannot predict well). MEGAnno provides a flexible and controllable way of organizing annotation projects through the exploratory labeling. This annotation process is done by first identifying an interesting subset and assigning labels to data in the subset. We provide a set of “power tools” to help identify valuable subsets.
 
 The script below shows an example of searching for data records with keyword "delay" and bringing up a widget for annotation in the next cell. More examples [here](advanced.md#subset-suggestion).
 ```python
 # search results => subset s1
-s1 = demo.search(keyword='delay', limit=10, skip=0)
+s1 = demo.search(keyword="delay", limit=10, skip=0)
 # bring up a widget 
 s1.show()
 ```
 
-#### Column Filters
+### Column Filters
 <img src="../assets/images/column_filter_reset.png" alt="Column Filters" width="800">
 <br/><span style="color: gray;">*To view all column filters, click on "Filters" button; to reset all column filters, click on "Reset filters" button.*</span>
 
-#### Column Order & Visibility
+### Column Order & Visibility
 <img src="../assets/images/column_visibility.png" alt="Column Order & Visibilty" width="500">
 <br/><span style="color: gray;">
 *1. To re-order and re-size column, mouse over column drag handler (left grip handler for re-order and right column edge for re-size).*
@@ -64,11 +64,11 @@ s1.show()
 *3. To reset column ordering and visibility, click on "Reset columns" button.*
 </span>
 
-#### Metadata Focus-view
+### Metadata Focus-view
 <img src="../assets/images/metadata_focusview.png" alt="Metadata Focus-view" width="600">
 <br/><span style="color: gray;">*To focus on a single metadata value, click on "Settings" button, then choose a metadata name from the list.*</span>
 
-### Exporting
+## Exporting
 Although iterations can happen within a single notebook, it's easy to export the data, and annotations collected:
 
 ```python

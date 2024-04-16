@@ -37,7 +37,7 @@ nav:
     - Getting started: quickstart.md
     - Basic Usages: basic.md
     - Advanced Features: advanced.md
-    - LLM integration: llm_integration.md
+    - LLM Integration: llm_integration.md
     - API docs:
           - Schema: references/schema.md
           - Service: references/service.md
@@ -45,6 +45,7 @@ nav:
           - Subset: references/subset.md
           - Controller: references/controller.md
           - OpenAIJob: references/openai_job.md
+          - PromptTemplate: references/prompt.md
 
 watch:
     - ../meganno_client

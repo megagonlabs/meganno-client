@@ -2,7 +2,7 @@
 ## Installation
 - Follow [instructions](https://github.com/megagonlabs/meganno-client?tab=readme-ov-file#installation) here to install meganno-client
 
-## Self-hosted service
+## Self-hosted Service
 - Download docker compose files at [meganno-service](https://github.com/megagonlabs/meganno-service)
 - Follow [setup instructions](https://github.com/megagonlabs/meganno-service?tab=readme-ov-file#set-up-services) here to launch meganno backend services
 
@@ -32,7 +32,7 @@ To invite contributors, follow the instructions below:
 
 1. Initialize Admin class object:
 ```python
-from labeler_client import Admin
+from meganno_client import Admin
 token = "..."
 auth = Authentication(project="<project_name>", token=token)
 

@@ -75,7 +75,7 @@ class PromptTemplate:
 
     def set_instruction(self, **kwargs):
         """
-        Updates template's task instruction and/or formatting instruction.
+        Update template's task instruction and/or formatting instruction.
         """
         self.task_inst = kwargs.get("task_inst", self.task_inst)
         self.is_json_template = kwargs.get("is_json_template", self.is_json_template)
@@ -84,7 +84,7 @@ class PromptTemplate:
     def build_template(self, task_inst, format_inst, f=lambda x: x):
         """
         A helper function to build template.
-        Returns a stringified prompt template with input slot.
+        Return a stringified prompt template with input slot.
 
         Parameters
         ----------
@@ -142,7 +142,7 @@ class PromptTemplate:
 
     def set_template(self, **kwargs):
         """
-        Updates template by updating task instruction and/or formatting instruction.
+        Update template by updating task instruction and/or formatting instruction.
         """
         self.set_instruction(**kwargs)
         self.template = self.build_template(
@@ -152,7 +152,7 @@ class PromptTemplate:
 
     def get_template(self):
         """
-        Returns the stringified prompt template with input slot.
+        Return the stringified prompt template with input slot.
 
         Returns
         -------
@@ -165,7 +165,7 @@ class PromptTemplate:
 
     def get_prompt(self, input_str: str, **kwargs):
         """
-        Returns the prompt for a given input.
+        Return the prompt for a given input.
 
         Parameters
         ----------
@@ -183,7 +183,7 @@ class PromptTemplate:
 
     def preview(self, records=[]):
         """
-        Opens up a widget to modify prompt template and preview final prompt.
+        Open up a widget to modify prompt template and preview final prompt.
 
         Parameters
         ----------
