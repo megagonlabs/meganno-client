@@ -37,7 +37,6 @@ Please see the [Getting Started](quickstart.md) page for setup instructions and 
 
 ## References
 
-Please cite our papers on [exploratory labeling](https://aclanthology.org/2022.dash-1.1/) and [human-LLM collaborative annotation](https://aclanthology.org/2024.eacl-demo.18/):
 
 ```
 @inproceedings{kim-etal-2024-meganno,
