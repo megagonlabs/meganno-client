@@ -100,7 +100,7 @@ class Subset:
     def __get_annotation_list(self, annotator_list: list = None):
         """
         Internal function, used by UI only.
-        Returns all annotation list for all data records in the subset.
+        Return all annotation list for all data records in the subset.
 
 
         Parameters
@@ -241,7 +241,7 @@ class Subset:
 
     def get_annotation_by_uuid(self, uuid):
         """
-        Returns the annotation for a particular data record (specified by uuid)
+        Return the annotation for a particular data record (specified by uuid)
 
         Parameters
         ----------
@@ -290,7 +290,7 @@ class Subset:
         return Annotation(subset=subset_ref, service=service_ref, config=config).show()
 
     def set_annotations(self, uuid=None, labels=None):
-        """Sets the annotation for a particular data record with the specified label
+        """Set the annotation for a particular data record with the specified label
 
         Parameters
         ----------
@@ -348,7 +348,7 @@ class Subset:
         return labels
 
     def get_reconciliation_data(self, uuid_list=None):
-        """Returns the list of reconciliation data for all data entries specified by user.
+        """Return the list of reconciliation data for all data entries specified by user.
         The reconciliation data for one data record consists of the annotations for it by all annotators
 
         Parameters

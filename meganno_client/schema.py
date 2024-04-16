@@ -3,7 +3,7 @@ from meganno_client.helpers import get_request, post_request
 
 class Schema:
     """
-    The Schema class is used to define the schema for labeling annotations.
+    The Schema class defines an annotation schema for a project.
 
     Attributes
     ----------
@@ -16,7 +16,7 @@ class Schema:
 
     def set_schemas(self, schemas=None):
         """
-        Sets the user-defined schema
+        Set a user-defined schema
 
         Parameters
         ----------
@@ -75,6 +75,6 @@ class Schema:
 
     def get_history(self):
         """
-        Get the full history of project schema
+        Get the full history of project schemas
         """
         return self.value(active=False)

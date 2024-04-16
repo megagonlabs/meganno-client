@@ -11,7 +11,7 @@ from meganno_client.subset import Subset
 
 class Controller:
     """
-    The Controller class manages agents and runs agent jobs.
+    The Controller class manages annotation agents and runs agent jobs.
     """
 
     def __init__(self, service, auth):
@@ -21,9 +21,9 @@ class Controller:
         Parameters
         ----------
         service : Service
-            Labeler service object for the connected project.
+            MEGAnno service object for the connected project.
         auth : Authentication
-            Labeler authentication object.
+            MEGAnno authentication object.
         """
         self.__service = service
         self.__auth = auth
@@ -132,7 +132,7 @@ class Controller:
 
     def register_agent(self, model_config, prompt_template_str, provider_api):
         """
-        Registers an agent with backend service.
+        Register an agent with backend service.
 
         Parameters
         ----------
@@ -165,7 +165,7 @@ class Controller:
 
     def persist_job(self, agent_uuid, job_uuid, label_name, annotation_uuid_list):
         """
-        Given annoations for a subset, persit as a job for the project.
+        Given annoations for a subset, persist them as a job for the project.
 
         Parameters
         ----------
@@ -204,8 +204,8 @@ class Controller:
 
     def create_agent(self, model_config, prompt_template, provider_api="openai:chat"):
         """
-        Validates model configs and registers a new agent.
-        Returns new agent's uuid.
+        Validate model configs and register a new agent.
+        Return new agent's uuid.
 
         Parameters
         ----------
@@ -246,7 +246,7 @@ class Controller:
 
     def get_agent_by_uuid(self, agent_uuid):
         """
-        Returns agent model configuration, prompt template, and creator id of specified agent.
+        Return agent model configuration, prompt template, and creator id of specified agent.
 
         Parameters
         ----------
@@ -316,14 +316,14 @@ class Controller:
         fuzzy_extraction=False,
     ):
         """
-        Creates, runs, and persists an LLM annotation job with given agent and subset.
+        Create, run, and persist an LLM annotation job with given agent and subset.
 
         Parameters
         ----------
         agent_uuid : str
             Uuid of an agent to be used for the job
         subset : Subset
-            [Megagon-only] Labeler Subset object to be annotated in the job
+            [Megagon-only] MEGAnno Subset object to be annotated in the job
         label_name : str
             Label name used for annotation
         batch_size : int

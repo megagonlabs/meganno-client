@@ -21,8 +21,8 @@ from meganno_client.subset import Subset
 
 class Service:
     """
-    Service objects communicate to back-end Labeler services and establish
-    connections to a Labeler project.
+    Service objects communicate to back-end MEGAnno services and establish
+    connections to a MEGAnno project.
 
 
     """
@@ -35,7 +35,7 @@ class Service:
         -------
         host : str, optional
             Host IP address for the back-end service to connect to.
-            If None, connects to Megagon-hosted service.
+            If None, connects to a Megagon-hosted service.
         project : str
             Project name. The name needs to be unique within the host
             domain.
@@ -43,7 +43,7 @@ class Service:
             User's authentication token.
         auth : Authentication
             Authentication object.
-            Can be skipped if valid token is provided.
+            Can be skipped if a valid token is provided.
         """
         if pydash.is_empty(project):
             raise Exception("Project cannot be None or empty.")

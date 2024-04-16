@@ -5,7 +5,7 @@ from meganno_client.helpers import get_request
 
 class Statistic:
     """
-    The Statistic class defines methods which show basic statistics
+    The Statistic class contains methods to show basic statistics
     of the labeling project. Mostly used to back views in the monitoring dashboard.
 
     Attributes
@@ -18,7 +18,7 @@ class Statistic:
         self.__service = service
 
     def get_label_progress(self):
-        """Get the overall label progress.
+        """Get the overall progress of annotation.
 
         Returns
         -------
@@ -36,7 +36,7 @@ class Statistic:
             raise Exception(response.text)
 
     def get_label_distributions(self, label_name: str = None):
-        """Gets class distributions for specified label.
+        """Get the class distribution of a selected label.
         If multiple annotators labeled the same record, aggregate using
         `majority vote`.
 
@@ -83,7 +83,7 @@ class Statistic:
             raise Exception(response.text)
 
     def get_annotator_agreements(self, label_name: str = None):
-        """Gets pairwise agreement score between all contributing
+        """Get pairwise agreement score between all contributing
         annotators to the project, on the specified label. The
         default agreement calculation method is
         [`cohen_kappa`](https://towardsdatascience.com/inter-annotator-agreement-2f46c6d37bf3).
@@ -112,7 +112,7 @@ class Statistic:
             raise Exception(response.text)
 
     def get_embeddings(self, label_name: str = None, embed_type: str = None):
-        """Returns 2-dimensional
+        """Return 2-dimensional
         [TSNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)
         projection of the text embedding for data records,
         together with their aggregated labels (using majority votes).
