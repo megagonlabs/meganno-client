@@ -122,5 +122,13 @@ demo.show()
 *****
 Other features
 
-* Assignment and dispatch
-* Multiple annotators and reconciliation
+* Assignment and dispatch: You may assign a subset to a particular annotator
+```python
+s1.assign(annotator_id)
+```
+
+
+* Multiple annotators and reconciliation: You are also able to view a reconciled list of annotations from multiple annotators
+```python
+s1.get_reconciliation_data()
+```
