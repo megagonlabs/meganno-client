@@ -37,7 +37,7 @@ Please see the [Getting Started](quickstart.md) page for setup instructions and 
 
 ## Citation
 
-Check out our research papers on [exploratory labeling (DaSH@EMNLP 2022)](https://aclanthology.org/2022.dash-1.1/) and [human-LLM collaborative annotation (EACL 2024 Demo)](https://aclanthology.org/2024.eacl-demo.18/).
+Check out our research papers on [human-LLM collaborative annotation (EACL 2024 Demo)](https://aclanthology.org/2024.eacl-demo.18/) and [exploratory labeling (DaSH@EMNLP 2022)](https://aclanthology.org/2022.dash-1.1/).
 
 If you use MEGAnno in your work, please cite as:
 
