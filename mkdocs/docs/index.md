@@ -4,13 +4,13 @@
 There are 2 ways to get started with MEGAnno:
 
 **1. Demo system access:**
-For your convenience, we prepared a Google Colab notebook for this demo. To run the Colab notebook, you’ll need a Google account, an OpenAI API key, and a MEGAnno access token (you can get this by filling out the [request form](https://meganno.github.io/#request_form)).  
+We prepared a Google Colab notebook for this demo. To run the Colab notebook, you’ll need a Google account, an OpenAI API key, and a MEGAnno access token (you can get this by filling out the [request form](https://meganno.github.io/#request_form)).  
 
 **2. Your own MEGAnno environment:**
-To setup MEGAnno for your own projects, you can setup your own self-hosted MEGAnno service.  Please follow the [self-hosted instalation instructions](quickstart.md#self-hosted-service).
+To set up MEGAnno for your own projects, you can set up your own self-hosted MEGAnno service.  Please follow the [self-hosted installation instructions](quickstart.md#self-hosted-service).
 
 ## What is MEGAnno?
-Many existing data annotation tools are focused on the annotator enabling them to annotate data and manage annotation activities.  Instead, MEGAnno is an open-source data annotation tool that puts the data scientist first, enabling you to bootstrap annotation tasks and manage the continual evolution of annotations through the machine learning lifecycle.  
+Many existing data annotation tools focus on the annotator enabling them to annotate data and manage annotation activities.  Instead, MEGAnno is an open-source data annotation tool that puts the data scientist first, enabling you to bootstrap annotation tasks and manage the continual evolution of annotations through the machine learning lifecycle.  
 
 In addition, MEGAnno’s unique capabilities include: 
 
@@ -21,9 +21,9 @@ In addition, MEGAnno’s unique capabilities include:
 * Explore the distribution of labels and the behavior of annotators to make decisions for subsequent labeling batches.  
 
 * A data scientist-focused experience enabling you to manage annotation directly in your notebooks.  This allows you to utilize existing Python functions and our built-in power tools to optimize your annotation process.                       
-* Seamlessly incorporate both human and LLM data labels with verification workflows and integration to popular LLMs.  This enables LLM agents to label data first and humans focus on verifying a subset of potentially problematic LLM labels.
+* Seamlessly incorporate both human and LLM data labels with verification workflows and integration to popular LLMs.  This enables LLM agents to label data first while humans focus on verifying a subset of potentially problematic LLM labels.
 
-![Figure 1. MEGAnno unique capabilities](assets/images/keyfeatures.gif)
+![Figure 1. MEGAnno's unique capabilities](assets/images/keyfeatures.gif)
 <br/><span style="color: gray;">*Figure 1. MEGAnno unique capabilities*</span>
 
 ## System Overview
