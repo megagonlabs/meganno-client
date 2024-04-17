@@ -1,7 +1,7 @@
 # **meganno-client**
 Client side programmatic python library for MEGAnno service with an inclusion of LLMs as annotators
 
-![version](https://img.shields.io/badge/meganno--client%20latest-v1.5.3-blue)
+![version](https://img.shields.io/badge/meganno--client%20latest-v1.5.4-blue)
 ## **Prerequisite Knowledge**
 Documentation for [MEGAnno concepts](https://meganno.megagon.info) 
 

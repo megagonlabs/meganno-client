@@ -27,7 +27,7 @@ package = {
         "jaro-winkler==2.0.3",
     ],
     "extras_require": {
-        "ui": ["meganno-ui @ git+https://github.com/megagonlabs/meganno-ui.git@v1.5.6"]
+        "ui": ["meganno-ui @ git+https://github.com/megagonlabs/meganno-ui.git@v1.5.7"]
     },
     "include_package_data": True,
     "zip_safe": False,
