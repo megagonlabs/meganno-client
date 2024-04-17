@@ -52,6 +52,42 @@ meganno-client documentation is hosted [here](https://meganno.megagon.info/) (we
 - To publish new docs, run `mike deploy [version] --push`
   - This will trigger GitHub action: `pages build and deployment`
 - For detailed documentation, refer to [Mike usage documentation](https://github.com/jimporter/mike#usage)
+
+## Citation
+
+Check out our research papers on [exploratory labeling (DaSH@EMNLP 2022)](https://aclanthology.org/2022.dash-1.1/) and [human-LLM collaborative annotation (EACL 2024 Demo)](https://aclanthology.org/2024.eacl-demo.18/).
+
+If you use MEGAnno in your work, please cite as:
+
+```bibtex
+@inproceedings{kim-etal-2024-meganno,
+    title = "{MEGA}nno+: A Human-{LLM} Collaborative Annotation System",
+    author = "Kim, Hannah and Mitra, Kushan and Li Chen, Rafael and Rahman, Sajjadur and Zhang, Dan",
+    editor = "Aletras, Nikolaos and De Clercq, Orphee",
+    booktitle = "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations",
+    month = mar,
+    year = "2024",
+    address = "St. Julians, Malta",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.eacl-demo.18",
+    pages = "168--176",
+}
+```
+```bibtex
+@inproceedings{zhang-etal-2022-meganno,
+    title = "{MEGA}nno: Exploratory Labeling for {NLP} in Computational Notebooks",
+    author = "Zhang, Dan and Kim, Hannah and Li Chen, Rafael and Kandogan, Eser and Hruschka, Estevam",
+    editor = "Dragut, Eduard and Li, Yunyao and Popa, Lucian and Vucetic, Slobodan and Srivastava, Shashank",
+    booktitle = "Proceedings of the Fourth Workshop on Data Science with Human-in-the-Loop (Language Advances)",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates (Hybrid)",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.dash-1.1",
+    pages = "1--7",
+}
+```
+
 ## Disclosure
 This software may include, incorporate, or access open source software (OSS) components, datasets and other third party components, including those identified below. The license terms respectively governing the datasets and third-party components continue to govern those portions, and you agree to those license terms may limit any distribution. You may  use any OSS components under the terms of their respective licenses, which may include BSD 3, Apache 2.0, or other licenses. In the event of conflicts between Megagon Labs, Inc. (“Megagon”) license conditions and the OSS license conditions, the applicable OSS conditions governing the corresponding OSS components shall prevail. 
 You agree not to, and are not permitted to, distribute actual datasets used with the OSS components listed below. You agree and are limited to distribute only links to datasets from known sources by listing them in the datasets overview table below. You agree that any right to modify datasets originating from parties other than Megagon  are governed by the respective third party’s license conditions. 
