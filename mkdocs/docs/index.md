@@ -24,7 +24,7 @@ In addition, MEGAnno’s unique capabilities include:
 * Seamlessly incorporate both human and LLM data labels with verification workflows and integration to popular LLMs.  This enables LLM agents to label data first while humans focus on verifying a subset of potentially problematic LLM labels.
 
 ![Figure 1. MEGAnno's unique capabilities](assets/images/keyfeatures.gif)
-<br/><span style="color: gray;">*Figure 1. MEGAnno unique capabilities*</span>
+<br/><span style="color: gray;">*Figure 1. MEGAnno's unique capabilities*</span>
 
 ## System Overview
 MEGAnno provides two key components: (1) a Python client library featuring interactive widgets and (2) a back-end service consisting of web API and database servers. To use our system, a user can interact with a Jupyter Notebook that has the MEGAnno client installed. Through programmatic interfaces and UI widgets, the client communicates with the service.
