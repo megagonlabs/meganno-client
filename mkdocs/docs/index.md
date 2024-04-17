@@ -35,10 +35,13 @@ MEGAnno provides two key components: (1) a Python client library featuring inter
 
 Please see the [Getting Started](quickstart.md) page for setup instructions and the [Advanced Features](advanced.md) page for more cool features we provide.
 
-## References
+## Citation
 
+Check out our research papers on [exploratory labeling (DaSH@EMNLP 2022)](https://aclanthology.org/2022.dash-1.1/) and [human-LLM collaborative annotation (EACL 2024 Demo)](https://aclanthology.org/2024.eacl-demo.18/).
 
-```
+If you use MEGAnno in your work, please cite as:
+
+```bibtex
 @inproceedings{kim-etal-2024-meganno,
     title = "{MEGA}nno+: A Human-{LLM} Collaborative Annotation System",
     author = "Kim, Hannah and Mitra, Kushan and Li Chen, Rafael and Rahman, Sajjadur and Zhang, Dan",
@@ -52,7 +55,7 @@ Please see the [Getting Started](quickstart.md) page for setup instructions and 
     pages = "168--176",
 }
 ```
-```
+```bibtex
 @inproceedings{zhang-etal-2022-meganno,
     title = "{MEGA}nno: Exploratory Labeling for {NLP} in Computational Notebooks",
     author = "Zhang, Dan and Kim, Hannah and Li Chen, Rafael and Kandogan, Eser and Hruschka, Estevam",
