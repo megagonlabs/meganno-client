@@ -39,6 +39,8 @@ demo.import_data_df(df, column_mapping={
 })
 ```
 
+**Note**: In order to import a new dataset, we recommend to do so within a new project environment.
+
 ## Exploratory Labeling
 Not all data points are equally important for downstream models and applications. There are often cases where users might want to prioritize a particular batch (e.g., to achieve better class or domain coverage or focus on the data points that the downstream model cannot predict well). MEGAnno provides a flexible and controllable way of organizing annotation projects through the exploratory labeling. This annotation process is done by first identifying an interesting subset and assigning labels to data in the subset. We provide a set of “power tools” to help identify valuable subsets.
 
