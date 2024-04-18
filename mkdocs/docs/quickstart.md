@@ -11,7 +11,7 @@ We have 2 ways to authenticate with the service:
 
 1. Short-term 1 hour access with username and password sign in.
     - Require re-authentication every hour.
-    - After executing `auth = Authentication(project="<project_name>")` (this only works for notebook and terminal running on local computer), you will be provided with a sign in interface via a new browser tab.
+    - After executing `auth = Authentication(project="<project_name>", host=<"project_host">, port=<"project_port">)` (this only works for notebook and terminal running on local computer), you will be provided with a sign in interface via a new browser tab.
         ![Sign-in](assets/images/signin.png){: style="width:300px"}
    
     - After signing in, you will be able to generate a long-term personal access token by running `auth.create_access_token(expiration_duration=7, note="testing")`
@@ -22,7 +22,7 @@ We have 2 ways to authenticate with the service:
     - If the notebook or terminal is running on the cloud, you need to use this method to authenticate with the service.
     - With the save token, you can initialize the authentication class object by executing: 
     ```python
-    auth = Authentication(project="<project_name>", token="<your_token>")
+    auth = Authentication(project="<project_name>", host=<"project_host">, port=<"project_port">, token="<your_token>")
     ```
 
 ### Roles
