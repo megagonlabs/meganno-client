@@ -1,5 +1,8 @@
 site_name: meganno-client Doc
+site_url: https://meganno.megagon.info/
+site_description: MEGAnno is a human-LLM collaborative annotation framework. For cost-efficient and high-quality annotation, we adopt the LLM annotation -> Human verification workflow where LLM agents label data first and then humans verify a subset of potentially problematic LLM labels.
 theme:
+    custom_dir: overrides/
     logo: assets/logo.png
     favicon: assets/images/favicon.ico
     name: material
