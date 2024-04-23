@@ -1,5 +1,4 @@
-![MEGAnno Logo](assets/images/MEGAnno_Full Logo.png){: style="width:300px"}
-# Welcome to MEGAnno documentation
+![MEGAnno Logo](assets/images/MEGAnno_Full Logo.png){: style="display:block;float:none;margin-left:auto;margin-right:auto;width:300px"}
 ## How to get started?
 
 There are 2 ways to get started with MEGAnno:
