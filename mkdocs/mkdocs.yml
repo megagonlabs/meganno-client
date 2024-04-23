@@ -1,4 +1,4 @@
-site_name: meganno-client Doc
+site_name: MEGAnno Doc
 site_url: https://meganno.megagon.info/
 site_description: MEGAnno is a human-LLM collaborative annotation framework. For cost-efficient and high-quality annotation, we adopt the LLM annotation -> Human verification workflow where LLM agents label data first and then humans verify a subset of potentially problematic LLM labels.
 theme:
@@ -41,14 +41,14 @@ nav:
     - Basic Usages: basic.md
     - Advanced Features: advanced.md
     - LLM Integration: llm_integration.md
-    - API docs:
+    - API client docs:
+          - Controller: references/controller.md
+          - OpenAIJob: references/openai_job.md
+          - PromptTemplate: references/prompt.md
           - Schema: references/schema.md
           - Service: references/service.md
           - Statistic: references/statistic.md
           - Subset: references/subset.md
-          - Controller: references/controller.md
-          - OpenAIJob: references/openai_job.md
-          - PromptTemplate: references/prompt.md
 
 watch:
     - ../meganno_client

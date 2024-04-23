@@ -1,3 +1,4 @@
+![MEGAnno Logo](assets/images/MEGAnno_Full Logo.png){: style="width:300px"}
 # Welcome to MEGAnno documentation
 ## How to get started?
 
