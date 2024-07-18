@@ -1,5 +1,5 @@
-pandas==1.5.3
-tqdm==4.62.0
+pandas==2.0.3
+tqdm==4.64.1
 meganno_ui==1.5.7
 httpx==0.24.1
 nest_asyncio==1.5.1
