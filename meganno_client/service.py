@@ -445,7 +445,7 @@ class Service:
                 raise Exception(response.text)
         return result
 
-    def import_data_url(self, url="", file_type=None, column_mapping={}):
+    def import_data_url(self, url="", file_type="csv", column_mapping={}):
         """
         Import data from a public url, currently only supporting csv files.
         Each row corresponds to a data record. The file needs at least two columns:
